@@ -1,304 +1,304 @@
-// section {
-//     margin-bottom: 3rem;
-// }
+section {
+    margin-bottom: 3rem;
+}
 
-// .card-title {
-//     margin-bottom: 1.2rem;
-//     display: flex;
-//     align-items: center;
+.card-title {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
 
-//     .title {
-//         margin-right: 1.2rem;
-//     }
+    .title {
+        margin-right: 1.2rem;
+    }
 
-//     span {
-//         text-decoration: underline;
-//         cursor: pointer;
-//         padding: .8rem 1.2rem;
-//     }
-// }
-
-
-
-// .card {
-//     padding: 1.2rem 1.6rem;
-//     background-color: var(--white);
-//     border-radius: 8px;
-
-//     h2 {
-//         margin-bottom: 1.6rem;
-//     }
-
-//     .card-info {
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         margin-bottom: 1.2rem;
-
-//         h2 {
-//             color: var(--text);
-//         }
-
-//         .money {
-//             display: flex;
-//         }
-//     }
-
-//     .card-info:last-of-type {
-//         margin: 0;
-//     }
-// }
-
-// .my-company {
-//     h2 {
-//         margin: 0;
-//     }
-// }
-
-// .scroll-card {
-//     min-width: 250px;
-//     max-width: 250px;
-// }
+    span {
+        text-decoration: underline;
+        cursor: pointer;
+        padding: .8rem 1.2rem;
+    }
+}
 
 
-// .scroll-container {
-//     overflow: auto;
-//     white-space: nowrap;
-//     display: flex;
-//     margin-right: -.8rem;
 
-//     .card {
-//         margin-right: 1.6rem;
-//     }
-// }
+.card {
+    padding: 1.2rem 1.6rem;
+    background-color: var(--white);
+    border-radius: 8px;
 
-// //for first card margin top.
-// #my-company {
-//     margin-top: 3.2rem;
-// }
+    h2 {
+        margin-bottom: 1.6rem;
+    }
 
+    .card-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.2rem;
 
-// .section-selector {
-//     margin-bottom: 3.2rem;
+        h2 {
+            color: var(--text);
+        }
 
-//     .selector {
-//         color: var(--main-black);
-//         font-weight: 700;
-//         padding: 1.2rem 1.6rem;
-//         display: block;
-//         border: 2px solid var(--main-black);
-//         border-radius: 300px;
-//         margin-right: 1.2rem;
-//         margin-bottom: 1rem;
-//     }
-// }
+        .money {
+            display: flex;
+        }
+    }
 
+    .card-info:last-of-type {
+        margin: 0;
+    }
+}
 
-// //for coffee selling price
-// .coffee-type {
-//     display: flex;
-//     justify-content: space-between;
+.my-company {
+    h2 {
+        margin: 0;
+    }
+}
 
-//     .price-element {
-//         display: flex;
-
-//         .dollar {
-//             margin-right: .4rem;
-//         }
-//     }
-// }
-
-// .CS-percentage {
-//     font-weight: 700;
-// }
-
-// .btn-container {
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-between;
-//     margin-top: 1.6rem;
-//     gap: .8rem;
-
-//     .btn__raise,
-//     .btn__low {
-//         width: 100%;
-//         text-align: center;
-//     }
-
-//     .btn__raise {
-//         background-color: var(--secondary-shade);
-//     }
-
-//     &--horizontal {
-//         flex-direction: column;
-//     }
-// }
+.scroll-card {
+    min-width: 250px;
+    max-width: 250px;
+}
 
 
-// //Coffee stocks
-// .stock__infos {
-//     display: flex;
-//     justify-content: space-between;
-//     margin-bottom: .4rem;
-// }
+.scroll-container {
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+    margin-right: -.8rem;
 
-// //Shop type
-// .my-shops {
-//     .shop-type {
-//         display: flex;
-//         justify-content: space-between;
-//     }
+    .card {
+        margin-right: 1.6rem;
+    }
+}
 
-//     .shop-value {
-//         span {
-//             display: block;
-//         }
-//     }
-
-//     .shop-infos {
-//         margin-top: 2.4rem;
-
-//         &--item {
-//             display: flex;
-//             justify-content: space-between;
-//         }
-
-//         .shop-employees-section {
-//             margin: .8rem 0
-//         }
-//     }
-
-//     .btn-container-all-items {
-//         margin-top: 2.4rem;
-
-//         .btn-container {
-
-//             .btn,
-//             .btn--secondary,
-//             .btn--secondary--primary-shade--secondary {
-//                 width: 50%;
-//                 padding: 1.2rem .4rem;
-//                 font-size: 1rem;
-//                 font-weight: 700;
-//             }
-//         }
-//     }
-// }
-
-// //Salaries
-// .salaries {
-
-//     .employee-type__employee {
-//         display: flex;
-//         justify-content: space-between;
-//     }
-
-//     .btn-container {
-//         margin-bottom: 3rem;
-//     }
-
-//     .sub {
-//         font-weight: 500;
-//     }
-// }
+//for first card margin top.
+#my-company {
+    margin-top: 3.2rem;
+}
 
 
-// //upgrades
-// .upgrades {
-//     .btn {
-//         margin: 1.6rem 0 3.2rem 0;
-//     }
-// }
+.section-selector {
+    margin-bottom: 3.2rem;
 
-// .danger-zone {
-//     margin: 6rem 0;
-// }
-
-
-// footer {
-//     width: 100%;
-//     padding: 0 0 12rem 0;
-//     text-align: center;
-
-//     .copyright {
-//         margin-bottom: 2.4rem;
-//     }
-// }
+    .selector {
+        color: var(--main-black);
+        font-weight: 700;
+        padding: 1.2rem 1.6rem;
+        display: block;
+        border: 2px solid var(--main-black);
+        border-radius: 300px;
+        margin-right: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
 
 
-// //NAVBAR
-// .burger {
-//     background-color: var(--main-black);
-//     border-radius: 50%;
-//     background-image: url(/assets/icons/navbar-default.png);
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//     background-size: 15%;
-//     width: 65px;
-//     height: 65px;
-//     position: fixed;
-//     bottom: 3.2rem;
-//     right: 1.2rem;
-//     cursor: pointer;
-//     z-index: 100;
-// }
+//for coffee selling price
+.coffee-type {
+    display: flex;
+    justify-content: space-between;
 
-// .close {
-//     background-image: url(/assets/icons/close.png);
-//     background-size: 15px;
-// }
+    .price-element {
+        display: flex;
+
+        .dollar {
+            margin-right: .4rem;
+        }
+    }
+}
+
+.CS-percentage {
+    font-weight: 700;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+    gap: .8rem;
+
+    .btn__raise,
+    .btn__low {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn__raise {
+        background-color: var(--secondary-shade);
+    }
+
+    &--horizontal {
+        flex-direction: column;
+    }
+}
 
 
-// .navbar {
-//     position: fixed;
-//     bottom: 3.2rem;
-//     right: 1.2rem;
-//     background-color: var(--main-black);
-//     display: flex;
-//     flex-direction: column;
-//     flex-wrap: nowrap;
-//     width: 65px;
-//     padding: 0 .2rem;
-//     justify-content: center;
-//     align-items: center;
-//     color: white;
-//     border-radius: 300px;
-//     max-height: 1000px;
-//     overflow: hidden;
-//     transition: max-height 600ms ease-out, opacity 300ms ease-out;
+//Coffee stocks
+.stock__infos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .4rem;
+}
 
-//     img {
-//         width: 15px;
-//     }
+//Shop type
+.my-shops {
+    .shop-type {
+        display: flex;
+        justify-content: space-between;
+    }
 
-//     .nav-item {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         justify-content: center;
-//         padding: .8rem;
+    .shop-value {
+        span {
+            display: block;
+        }
+    }
 
-//         span {
-//             margin-bottom: .4rem
-//         }
-//     }
-// }
+    .shop-infos {
+        margin-top: 2.4rem;
 
-// .nav-closed {
-//     max-height: 0px;
-//     opacity: 0;
-//     transform: translateY(-50px);
-//     transition: max-height 300ms cubic-bezier(1,0,.53,1), opacity 600ms ease-in, transform 300ms ease-in 100ms;
-// }
+        &--item {
+            display: flex;
+            justify-content: space-between;
+        }
 
-// .nav-item:first-child {
-//     margin-top: 1.6rem;
-//     margin-bottom: 3.2rem;
-//     cursor: pointer;
-// }
+        .shop-employees-section {
+            margin: .8rem 0
+        }
+    }
 
-// .nav-item:last-of-type {
-//     margin-top: 3.2rem;
-//     margin-bottom: 1.6rem;
-//     cursor: pointer;
-// }
+    .btn-container-all-items {
+        margin-top: 2.4rem;
+
+        .btn-container {
+
+            .btn,
+            .btn--secondary,
+            .btn--secondary--primary-shade--secondary {
+                width: 50%;
+                padding: 1.2rem .4rem;
+                font-size: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+//Salaries
+.salaries {
+
+    .employee-type__employee {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-container {
+        margin-bottom: 3rem;
+    }
+
+    .sub {
+        font-weight: 500;
+    }
+}
+
+
+//upgrades
+.upgrades {
+    .btn {
+        margin: 1.6rem 0 3.2rem 0;
+    }
+}
+
+.danger-zone {
+    margin: 6rem 0;
+}
+
+
+footer {
+    width: 100%;
+    padding: 0 0 12rem 0;
+    text-align: center;
+
+    .copyright {
+        margin-bottom: 2.4rem;
+    }
+}
+
+
+//NAVBAR
+.burger {
+    background-color: var(--main-black);
+    border-radius: 50%;
+    background-image: url(/assets/icons/navbar-default.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15%;
+    width: 65px;
+    height: 65px;
+    position: fixed;
+    bottom: 3.2rem;
+    right: 1.2rem;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close {
+    background-image: url(/assets/icons/close.png);
+    background-size: 15px;
+}
+
+
+.navbar {
+    position: fixed;
+    bottom: 3.2rem;
+    right: 1.2rem;
+    background-color: var(--main-black);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 65px;
+    padding: 0 .2rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 300px;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 600ms ease-out, opacity 300ms ease-out;
+
+    img {
+        width: 15px;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: .8rem;
+
+        span {
+            margin-bottom: .4rem
+        }
+    }
+}
+
+.nav-closed {
+    max-height: 0px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: max-height 300ms cubic-bezier(1,0,.53,1), opacity 600ms ease-in, transform 300ms ease-in 100ms;
+}
+
+.nav-item:first-child {
+    margin-top: 1.6rem;
+    margin-bottom: 3.2rem;
+    cursor: pointer;
+}
+
+.nav-item:last-of-type {
+    margin-top: 3.2rem;
+    margin-bottom: 1.6rem;
+    cursor: pointer;
+}
