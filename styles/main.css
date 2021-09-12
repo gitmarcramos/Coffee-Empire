@@ -109,6 +109,11 @@ a {
   color: var(--primary-shade);
 }
 
+.danger-btn {
+  color: white;
+  background-color: var(--danger);
+}
+
 .bolder {
   font-weight: 700;
 }

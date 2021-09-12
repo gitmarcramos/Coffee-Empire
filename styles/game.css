@@ -225,4 +225,117 @@ section {
 .upgrades .btn {
   margin: 1.6rem 0 3.2rem 0;
 }
+
+.danger-zone {
+  margin: 6rem 0;
+}
+
+footer {
+  width: 100%;
+  padding: 0 0 12rem 0;
+  text-align: center;
+}
+
+footer .copyright {
+  margin-bottom: 2.4rem;
+}
+
+.burger {
+  background-color: var(--main-black);
+  border-radius: 50%;
+  background-image: url(/assets/icons/navbar-default.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 15%;
+  width: 65px;
+  height: 65px;
+  position: fixed;
+  bottom: 3.2rem;
+  right: 1.2rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.close {
+  background-image: url(/assets/icons/close.png);
+  background-size: 15px;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 3.2rem;
+  right: 1.2rem;
+  background-color: var(--main-black);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 65px;
+  padding: 0 .2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  border-radius: 300px;
+  max-height: 1000px;
+  overflow: hidden;
+  -webkit-transition: max-height 600ms ease-out, opacity 300ms ease-out;
+  transition: max-height 600ms ease-out, opacity 300ms ease-out;
+}
+
+.navbar img {
+  width: 15px;
+}
+
+.navbar .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .8rem;
+}
+
+.navbar .nav-item span {
+  margin-bottom: .4rem;
+}
+
+.nav-closed {
+  max-height: 0px;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: max-height 300ms cubic-bezier(1, 0, 0.53, 1), opacity 600ms ease-in, -webkit-transform 300ms ease-in 100ms;
+  transition: max-height 300ms cubic-bezier(1, 0, 0.53, 1), opacity 600ms ease-in, -webkit-transform 300ms ease-in 100ms;
+  transition: max-height 300ms cubic-bezier(1, 0, 0.53, 1), opacity 600ms ease-in, transform 300ms ease-in 100ms;
+  transition: max-height 300ms cubic-bezier(1, 0, 0.53, 1), opacity 600ms ease-in, transform 300ms ease-in 100ms, -webkit-transform 300ms ease-in 100ms;
+}
+
+.nav-item:first-child {
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem;
+  cursor: pointer;
+}
+
+.nav-item:last-of-type {
+  margin-top: 3.2rem;
+  margin-bottom: 1.6rem;
+  cursor: pointer;
+}
 /*# sourceMappingURL=game.css.map */

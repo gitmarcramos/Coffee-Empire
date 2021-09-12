@@ -49,13 +49,13 @@ section {
     }
 }
 
-.my-company{
+.my-company {
     h2 {
         margin: 0;
     }
 }
 
-.scroll-card{
+.scroll-card {
     min-width: 250px;
     max-width: 250px;
 }
@@ -186,28 +186,121 @@ section {
 }
 
 //Salaries
-.salaries{
+.salaries {
 
-    .employee-type__employee{
+    .employee-type__employee {
         display: flex;
         justify-content: space-between;
     }
 
-    .btn-container{
+    .btn-container {
         margin-bottom: 3rem;
     }
 
-    .sub{
+    .sub {
         font-weight: 500;
     }
 }
 
 
 //upgrades
-
-.upgrades{
-
-    .btn{
+.upgrades {
+    .btn {
         margin: 1.6rem 0 3.2rem 0;
     }
+}
+
+.danger-zone {
+    margin: 6rem 0;
+}
+
+
+footer {
+    width: 100%;
+    padding: 0 0 12rem 0;
+    text-align: center;
+
+    .copyright {
+        margin-bottom: 2.4rem;
+    }
+}
+
+
+//NAVBAR
+.burger {
+    background-color: var(--main-black);
+    border-radius: 50%;
+    background-image: url(/assets/icons/navbar-default.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15%;
+    width: 65px;
+    height: 65px;
+    position: fixed;
+    bottom: 3.2rem;
+    right: 1.2rem;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close {
+    background-image: url(/assets/icons/close.png);
+    background-size: 15px;
+}
+
+
+.navbar {
+    position: fixed;
+    bottom: 3.2rem;
+    right: 1.2rem;
+    background-color: var(--main-black);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 65px;
+    padding: 0 .2rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 300px;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 600ms ease-out, opacity 300ms ease-out;
+
+    img {
+        width: 15px;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: .8rem;
+
+        span {
+            margin-bottom: .4rem
+        }
+    }
+}
+
+
+
+.nav-closed {
+    max-height: 0px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: max-height 300ms cubic-bezier(1,0,.53,1), opacity 600ms ease-in, transform 300ms ease-in 100ms;
+}
+
+.nav-item:first-child {
+    margin-top: 1.6rem;
+    margin-bottom: 3.2rem;
+    cursor: pointer;
+}
+
+.nav-item:last-of-type {
+    margin-top: 3.2rem;
+    margin-bottom: 1.6rem;
+    cursor: pointer;
 }
