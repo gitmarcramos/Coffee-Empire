@@ -1,0 +1,58 @@
+.container--index {
+  padding-top: 3rem;
+}
+
+.container--index h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.container--index .index-btn-container {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container--index .index-btn-container .btn,
+.container--index .index-btn-container .btn--secondary {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.container--index .index-settings {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.container--index .index-settings a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container--index .index-settings a span {
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=others.css.map */

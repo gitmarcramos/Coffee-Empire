@@ -1,0 +1,213 @@
+section {
+    margin-bottom: 3rem;
+}
+
+.card-title {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+
+    .title {
+        margin-right: 1.2rem;
+    }
+
+    span {
+        text-decoration: underline;
+        cursor: pointer;
+        padding: .8rem 1.2rem;
+    }
+}
+
+
+
+.card {
+    padding: 1.2rem 1.6rem;
+    background-color: var(--white);
+    border-radius: 8px;
+
+    h2 {
+        margin-bottom: 1.6rem;
+    }
+
+    .card-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.2rem;
+
+        h2 {
+            color: var(--text);
+        }
+
+        .money {
+            display: flex;
+        }
+    }
+
+    .card-info:last-of-type {
+        margin: 0;
+    }
+}
+
+.my-company{
+    h2 {
+        margin: 0;
+    }
+}
+
+.scroll-card{
+    min-width: 250px;
+    max-width: 250px;
+}
+
+
+.scroll-container {
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+    margin-right: -.8rem;
+
+    .card {
+        margin-right: 1.6rem;
+    }
+}
+
+//for first card margin top.
+#my-company {
+    margin-top: 3.2rem;
+}
+
+
+.section-selector {
+    margin-bottom: 3.2rem;
+
+    .selector {
+        color: var(--main-black);
+        font-weight: 700;
+        padding: 1.2rem 1.6rem;
+        display: block;
+        border: 2px solid var(--main-black);
+        border-radius: 300px;
+        margin-right: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+//for coffee selling price
+.coffee-type {
+    display: flex;
+    justify-content: space-between;
+
+    .price-element {
+        display: flex;
+
+        .dollar {
+            margin-right: .4rem;
+        }
+    }
+}
+
+.CS-percentage {
+    font-weight: 700;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+    gap: .8rem;
+
+    .btn__raise,
+    .btn__low {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn__raise {
+        background-color: var(--secondary-shade);
+    }
+
+    &--horizontal {
+        flex-direction: column;
+    }
+}
+
+
+//Coffee stocks
+.stock__infos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .4rem;
+}
+
+//Shop type
+.my-shops {
+    .shop-type {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .shop-value {
+        span {
+            display: block;
+        }
+    }
+
+    .shop-infos {
+        margin-top: 2.4rem;
+
+        &--item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .shop-employees-section {
+            margin: .8rem 0
+        }
+    }
+
+    .btn-container-all-items {
+        margin-top: 2.4rem;
+
+        .btn-container {
+
+            .btn,
+            .btn--secondary,
+            .btn--secondary--primary-shade--secondary {
+                width: 50%;
+                padding: 1.2rem .4rem;
+                font-size: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+//Salaries
+.salaries{
+
+    .employee-type__employee{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-container{
+        margin-bottom: 3rem;
+    }
+
+    .sub{
+        font-weight: 500;
+    }
+}
+
+
+//upgrades
+
+.upgrades{
+
+    .btn{
+        margin: 1.6rem 0 3.2rem 0;
+    }
+}
