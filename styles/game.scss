@@ -53,11 +53,16 @@ section {
     h2 {
         margin: 0;
     }
+
+    svg{
+        width: clamp(1.8rem, 100vw, 2.4rem);
+        height: clamp(1.8rem, 100vw, 2.4rem);
+    }
 }
 
 .scroll-card {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: clamp(250px, 100vw, 270px);
+    max-width: clamp(250px, 100vw, 270px);
 }
 
 
@@ -90,6 +95,7 @@ section {
         border-radius: 300px;
         margin-right: 1.2rem;
         margin-bottom: 1rem;
+        font-size: clamp(1.1rem, 100vw, 1.4rem);
     }
 }
 
@@ -106,6 +112,11 @@ section {
             margin-right: .4rem;
         }
     }
+}
+
+.coffee-satisfaction {
+    display: flex;
+    justify-content: space-between;
 }
 
 .CS-percentage {
@@ -161,6 +172,8 @@ section {
         &--item {
             display: flex;
             justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: clamp(.1rem, 100vh, .4rem);
         }
 
         .shop-employees-section {
@@ -205,16 +218,30 @@ section {
 
 //upgrades
 .upgrades {
+
+    h2{
+        margin-bottom: .4rem;
+    }
+
     .btn {
-        margin: 1.6rem 0 3.2rem 0;
+        margin: 1.6rem 0 4.8rem 0;
     }
 }
 
+
+
+
+//Restart
 .danger-zone {
     margin: 6rem 0;
 }
 
 
+
+
+
+
+//Footer
 footer {
     width: 100%;
     padding: 0 0 12rem 0;
@@ -226,6 +253,9 @@ footer {
 }
 
 
+
+
+
 //NAVBAR
 .burger {
     background-color: var(--main-black);
@@ -234,8 +264,8 @@ footer {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 15%;
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     position: fixed;
     bottom: 3.2rem;
     right: 1.2rem;
@@ -254,16 +284,17 @@ footer {
     bottom: 3.2rem;
     right: 1.2rem;
     background-color: var(--main-black);
+    opacity: .9;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 65px;
+    width: 55px;
     padding: 0 .2rem;
     justify-content: center;
     align-items: center;
     color: white;
     border-radius: 300px;
-    max-height: 1000px;
+    max-height: 3000px;
     overflow: hidden;
     transition: max-height 600ms ease-out, opacity 300ms ease-out;
 
@@ -276,7 +307,7 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: .8rem;
+        padding: 1rem .8rem;
 
         span {
             margin-bottom: .4rem
