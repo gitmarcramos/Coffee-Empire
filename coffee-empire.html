@@ -22,8 +22,15 @@
         <!-- My company card -->
         <section id="my-company">
             <div class="card-title">
-                <h1 class="title">My company</h1>
-                <span class="bodyText">Edit name</span>
+                <h1 class="title" id="company-name">My company</h1>
+                <span class="bodyText" id="edit-company-name">Edit name</span>
+                <div class="form hidden">
+                    <div class="form-item">
+                        <input type="text" name="name" id="name" placeholder="Enter your company name">
+                        <button>Enter</button>
+                    </div>
+                </div>
+
             </div>
 
             <div class="card my-company">
@@ -305,7 +312,7 @@
                             <span class="bodyText bolder">100</span>
                         </div>
                         <div class="stock__infos stock__infos--clients-satisfaction">
-                            <span class="bodyText">Client's <br> satisfaction:</span>
+                            <span class="bodyText">Client's satisfaction:</span>
                             <span class="bodyText bolder">+30%</span>
                         </div>
                         <div class="stock__infos stock__infos--coffees-left">
@@ -341,7 +348,7 @@
                             <span class="bodyText bolder">25</span>
                         </div>
                         <div class="stock__infos stock__infos--clients-satisfaction">
-                            <span class="bodyText">Client's <br> satisfaction:</span>
+                            <span class="bodyText">Client's satisfaction:</span>
                             <span class="bodyText bolder">+50%</span>
                         </div>
                         <div class="stock__infos stock__infos--coffees-left">
@@ -787,16 +794,26 @@
 
         <div class="cookies-modal hidden-cookies">
             <h2 class="sub">What goes well with coffees...? Cookies!</h2>
-            <p class="bodyText">I use cookies to analyse your session in order to improve the game logic and design. <a href="cookie-policy.html" class="bodyText">Learn more</a></p>
+            <p class="bodyText">I use cookies to analyse your session in order to improve the game logic and design. <a
+                    href="cookie-policy.html" class="bodyText">Learn more</a></p>
             <div class="btn-container">
                 <div class="btn btn--decline" id="refuse-cookies">Decline</div>
-                <div class="btn btn--accept" id="accept-cookies" >Accept</div>
+                <div class="btn btn--accept" id="accept-cookies">Accept</div>
             </div>
             <a href="cookie-policy.html" class="bodyText">Learn more</a>
         </div>
 
+        <div class="nailed-company-name hidden">
+            <p class="sub">Congrats! This name give you a bonus of 💰 $1.000.000 💰</p>
+            <div class="btn-container">
+                <div class="btn bonus-Btn">Wow, thanks!</div>
+                <div class="btn btn__raise bonus-Btn">I prefer to pass...</div>
+            </div>
+        </div>
+
         <script src="/javascript/cookies-modal.js"></script>
         <script src="/javascript/app.js"></script>
+        <script src="/javascript/logic.js"></script>
 
 
     </div>

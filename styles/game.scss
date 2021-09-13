@@ -6,9 +6,47 @@ section {
     margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     .title {
         margin-right: 1.2rem;
+    }
+
+    .form {
+        width: 100%;
+        margin-top: 1.6rem;
+        height: 50px;
+
+        .form-item {
+            display: flex;
+            gap: .4rem;
+
+            input {
+                height: 100%;
+                min-width: 60%;
+                padding: 1.6rem;
+                border: none;
+                border-radius: 0;
+                margin: 0;
+                font-family: 'Roboto Mono', monospace;
+                font-weight: 700;
+            }
+
+            button {
+                border: none;
+                width: 40%;
+                background-color: var(--secondary);
+                font-family: 'Roboto Mono', monospace;
+                color: white;
+                font-weight: 700;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+
+
     }
 
     span {
@@ -54,7 +92,7 @@ section {
         margin: 0;
     }
 
-    svg{
+    svg {
         width: clamp(1.8rem, 100vw, 2.4rem);
         height: clamp(1.8rem, 100vw, 2.4rem);
     }
@@ -219,7 +257,7 @@ section {
 //upgrades
 .upgrades {
 
-    h2{
+    h2 {
         margin-bottom: .4rem;
     }
 
@@ -252,7 +290,34 @@ footer {
     }
 }
 
+// NAME BONUS 
+.nailed-company-name {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-light);
+    padding: 1.6rem 1.8rem;
+    border-radius: 1.6rem;
+    min-width: 95%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    p {
+        color: white;
+        text-align: center;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        display: flex;
+        margin-top: 3.2rem;
+        gap: 1.6rem
+    }
+}
 
 
 
@@ -319,7 +384,7 @@ footer {
     max-height: 0px;
     opacity: 0;
     transform: translateY(-50px);
-    transition: max-height 300ms cubic-bezier(1,0,.53,1), opacity 600ms ease-in, transform 300ms ease-in 100ms;
+    transition: max-height 300ms cubic-bezier(1, 0, .53, 1), opacity 600ms ease-in, transform 300ms ease-in 100ms;
 }
 
 .nav-item:first-child {
@@ -332,4 +397,10 @@ footer {
     margin-top: 3.2rem;
     margin-bottom: 1.6rem;
     cursor: pointer;
+}
+
+
+//! keep in the bottom of the page
+.hidden {
+    display: none;
 }
