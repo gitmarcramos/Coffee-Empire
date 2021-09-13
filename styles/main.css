@@ -36,7 +36,7 @@ a {
 
 .bodyText {
   font-weight: 400;
-  font-size: clamp(1.1rem, 10vw, 1.4rem);
+  font-size: 1.2rem;
   color: var(--main-black);
 }
 
@@ -153,5 +153,79 @@ header .logo {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: white;
+  }
+  .game-container {
+    background-color: var(--bg);
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    max-width: 414px;
+    height: 90vh;
+    border: 6px solid var(--main-black);
+    border-radius: 16px;
+    overflow-x: hidden;
+    padding: 1.6rem;
+  }
+}
+
+.modal {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px;
+  background-color: #333333fe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .alert-box {
+  max-width: 300px;
+}
+
+.modal .alert-box .emoji {
+  scale: 3;
+  margin-bottom: 3.2rem;
+}
+
+.modal .alert-box p {
+  color: white;
+  margin-bottom: 2.4rem;
+  text-align: center;
+}
+
+.modal .alert-box .btn,
+.modal .alert-box span {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal .alert-box span {
+  text-decoration: underline;
+  display: block;
+  max-width: 30ch;
+  margin: 2.4rem auto;
+  opacity: .8;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

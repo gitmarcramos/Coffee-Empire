@@ -44,7 +44,7 @@ a {
 
 .bodyText {
     font-weight: 400;
-    font-size: clamp(1.1rem,  10vw, 1.4rem);
+    font-size: 1.2rem;
     color: var(--main-black);
 }
 
@@ -102,40 +102,41 @@ a {
     cursor: pointer;
 }
 
-.primary-shade{
+.primary-shade {
     background-color: var(--primary-shade);
 }
 
-.primary-shade--secondary{
+.primary-shade--secondary {
     border-color: var(--primary-shade);
     color: var(--primary-shade);
 }
 
-.danger-btn{
+.danger-btn {
     color: white;
     background-color: var(--danger);
 }
 
-.bolder{
+.bolder {
     font-weight: 700;
 }
 
-.danger{
+.danger {
     color: var(--danger);
 }
 
-.neutral{
+.neutral {
     color: var(--neutral);
 }
 
-.grey{
+.grey {
     color: var(--text);
 }
 
-.disabled{
+.disabled {
     opacity: 0.5;
     cursor: none;
 }
+
 ////////////////////////////////////////////////////////////////////////////
 
 
@@ -154,4 +155,78 @@ header {
         background-size: contain;
     }
 
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+//Queries for non phones devices
+
+@media screen and (min-width: 768px) {
+
+    body {
+        background-color: white;
+    }
+
+    .game-container {
+        background-color: var(--bg);
+        position: absolute;
+        top: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 414px;
+        height: 90vh;
+        border: 6px solid var(--main-black);
+        border-radius: 16px;
+        overflow-x: hidden;
+        padding: 1.6rem;
+    }
+}
+
+//modal for warning display
+.modal {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    background-color: #333333fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .alert-box {
+        max-width: 300px;
+
+        .emoji {
+            scale: 3;
+            margin-bottom: 3.2rem;
+        }
+
+        p {
+            color: white;
+            margin-bottom: 2.4rem;
+            text-align: center;
+        }
+
+        .btn,
+        span {
+            font-size: 1.2rem;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        span {
+            text-decoration: underline;
+            display: block;
+            max-width: 30ch;
+            margin: 2.4rem auto;
+            opacity: .8
+        }
+    }
+}
+
+.hidden {
+    display: none;
 }

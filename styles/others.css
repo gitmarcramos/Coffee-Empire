@@ -1,5 +1,20 @@
+.game-container {
+  position: fixed;
+}
+
 .container--index {
   padding-top: 3rem;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container--index h1 {
@@ -54,5 +69,69 @@
 
 .container--index .index-settings a span {
   margin-top: 1rem;
+}
+
+.cookies-modal {
+  position: fixed;
+  width: 100%;
+  max-width: 400px;
+  bottom: 0;
+  right: 0;
+  background-color: #E6CDB2;
+  padding: 1.6rem;
+  border-radius: 16px 16px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 30vh;
+}
+
+.cookies-modal h2 {
+  margin-bottom: .8rem;
+}
+
+.cookies-modal a {
+  text-decoration: underline;
+}
+
+.cookies-modal .btn-container {
+  margin: 3.2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: .8rem;
+}
+
+.cookies-modal .btn-container .btn {
+  width: 100%;
+}
+
+.cookies-modal .btn-container .btn--decline {
+  color: var(--main-black);
+  background-color: transparent;
+  border: 1px solid var(--main-black);
+  font-weight: 400;
+}
+
+.cookies-modal .btn-container .btn--accept {
+  background-color: var(--main-black);
+}
+
+.cookies-hidden {
+  display: none;
 }
 /*# sourceMappingURL=others.css.map */
