@@ -234,7 +234,7 @@ header {
 ////////////////////////////////////////////////////////////////////////////
 // cookies modal
 
-.cookies-modal{
+.cookies-modal {
     position: fixed;
     width: 100%;
     max-width: 400px;
@@ -251,44 +251,52 @@ header {
     transition: transform 1200ms ease-in;
     z-index: 9999;
 
-    h2{
+    h2 {
         margin-bottom: .8rem;
     }
 
-    a{
+    a {
         text-decoration: underline;
     }
 
-    .btn-container{
+    .btn-container {
         margin: 3.2rem 0;
         display: flex;
         width: 100%;
         justify-content: space-between;
         gap: .8rem;
 
-        .btn{
+        .btn {
             width: 100%;
         }
 
-        .btn--decline{
+        .btn--decline {
             color: var(--main-black);
             background-color: transparent;
             border: 1px solid var(--main-black);
             font-weight: 400;
         }
 
-        .btn--accept{
+        .btn--accept {
             background-color: var(--main-black)
         }
     }
 }
 
-.hidden-cookies{
+.hidden-cookies {
     opacity: 0;
     transform: translateY(1000px);
     transition: all 1200ms ease-in;
 }
 
+
+input, select, textarea {
+    font-size: 16px;
+}
+
+::placeholder {
+    font-size: 1rem;
+}
 
 ////////////////////////////////////////////////////////////////////////////
 //! always keep at the end of the styles

@@ -20,8 +20,19 @@ function updateName(name) {
   companyName.innerText = inputValue.value;
 }
 
-//FUNCTION create bonus bonus
+//FUNCTION create bonus modal
 function createBonusModal() {
+  let bgBonus = document.createElement("div");
+  bgBonus.className = "bg-modal";
+  document.body.appendChild(bgBonus);
+  bgBonus.style.position = "fixed";
+  bgBonus.style.width = "100%";
+  bgBonus.style.height = "100vh";
+  bgBonus.style.top = "0";
+  bgBonus.style.left = "0";
+  bgBonus.style.opacity = ".95";
+  bgBonus.style.backgroundColor = "var(--primary-shade)";
+
   let bonusModal = document.createElement("div");
   bonusModal.className = "bonus-modal";
   document.body.appendChild(bonusModal);
@@ -29,8 +40,7 @@ function createBonusModal() {
   bonusModal.style.top = "50%";
   bonusModal.style.left = "50%";
   bonusModal.style.transform = "translate(-50%, -50%)";
-  bonusModal.style.width = "90%";
-  bonusModal.style.height = "80vh";
+  bonusModal.style.width = "80%";
   bonusModal.style.backgroundColor = "#FAA14D";
   bonusModal.style.borderRadius = "1.6rem";
   bonusModal.style.padding = "2.4rem";
@@ -42,7 +52,8 @@ function createBonusModal() {
   let bonusP = document.createElement("p");
   bonusModal.appendChild(bonusP);
   bonusP.className = "sub";
-  bonusP.innerText = "Congrats! This name give you a bonus of 💰 $1.000.000 💰";
+  bonusP.innerText =
+    "Congrats! This name gives you a bonus of 💰 $1.000.000 💰";
   bonusP.style.color = "white";
   bonusP.style.textAlign = "center";
 
@@ -70,45 +81,59 @@ function createBonusModal() {
   bonusBtns.forEach((button) => {
     button.addEventListener("click", () => {
       let toRemove = document.querySelector(".bonus-modal");
-      toRemove.remove();
+      toRemove.style.opacity = "0";
+      toRemove.style.transition = "opacity 300ms ease-in";
+      document.querySelector(".bg-modal").style.transition = "opacity 300ms ease-out";
+      document.querySelector(".bg-modal").style.opacity = "0";
+      document.querySelector(".bg-modal").remove();
+
+      setTimeout(() => {
+        toRemove.remove();
+      }, 600);
     });
   });
 }
 
-//FUNCTION create error bonus
 
+
+//FUNCTION create error bonus
 function errorBonus() {
   let errorModal = document.createElement("div");
   errorModal.className = "error-modal";
 
   let errorMessage = document.createElement("span");
-  errorMessage.className = 'sub';
+  errorMessage.className = "sub";
   errorModal.appendChild(errorMessage);
-  errorMessage.innerHTML = ' 😏 <br> Well played! But the naming bonus is only available once!'
+  errorMessage.innerHTML =
+    " 😏 <br> Well played! But the naming bonus is only available once!";
 
   document.body.appendChild(errorModal);
   errorModal.style.textAlign = "center";
-  errorModal.style. padding = "2.4rem";
+  errorModal.style.padding = "2.4rem";
   errorModal.style.backgroundColor = "#D40000";
   errorModal.style.position = "fixed";
-  errorModal.style.left= "50%";
+  errorModal.style.left = "50%";
   errorModal.style.top = "50%";
   errorModal.style.transform = "translate(-50%, -50%)";
   errorModal.style.borderRadius = "1.6rem";
   errorModal.style.width = "80%";
-  errorModal.style.boxShadow = "10px 10px 25px rgba(0, 0, 0, 0.2)"
-  errorMessage.style.color = "white"
+  errorModal.style.boxShadow = "10px 10px 25px rgba(0, 0, 0, 0.2)";
+  errorMessage.style.color = "white";
 
-  let errorBtn = document.createElement('div');
-  errorBtn.className = "btn"
+  let errorBtn = document.createElement("div");
+  errorBtn.className = "btn";
   errorModal.appendChild(errorBtn);
-  errorBtn.innerText = "Alright..."
-  errorBtn.style.marginTop = "2.4rem"
+  errorBtn.innerText = "Alright...";
+  errorBtn.style.marginTop = "2.4rem";
 
-  //CLOSE error modal 
-  errorBtn.addEventListener('click', () => {
-    document.querySelector('.error-modal').remove()
-  })
+  //CLOSE error modal
+  errorBtn.addEventListener("click", () => {
+    errorModal.style.opacity = "0";
+    errorModal.style.transition = "opacity 300ms ease-in";
+    setTimeout(() => {
+      document.querySelector(".error-modal").remove();
+    }, 600);
+  });
 }
 
 // Check if the bonus has already been applied
@@ -121,12 +146,12 @@ document.querySelector("button").addEventListener("click", () => {
   } else if (inputValue.value === "Jeanne" && noCheat < 1) {
     updateName("Jeanne");
     noCheat++;
-    console.log(noCheat);
     createBonusModal();
     companyForm.classList.add("hidden");
   } else if (inputValue.value === "Jeanne" && noCheat >= 1) {
     noCheat++;
     errorBonus();
+    companyForm.classList.add("hidden");
   } else {
     updateName();
     noCheat++;
@@ -149,7 +174,8 @@ document.querySelector("input").addEventListener("keypress", function (e) {
       companyForm.classList.add("hidden");
     } else if (inputValue.value === "Jeanne" && noCheat >= 1) {
       noCheat++;
-      errorBonus()
+      errorBonus();
+      companyForm.classList.add("hidden");
     } else {
       updateName();
       noCheat++;

@@ -298,6 +298,26 @@ header .logo {
   transition: all 1200ms ease-in;
 }
 
+input, select, textarea {
+  font-size: 16px;
+}
+
+::-webkit-input-placeholder {
+  font-size: 1rem;
+}
+
+:-ms-input-placeholder {
+  font-size: 1rem;
+}
+
+::-ms-input-placeholder {
+  font-size: 1rem;
+}
+
+::placeholder {
+  font-size: 1rem;
+}
+
 .hidden {
   display: none;
 }
