@@ -83,23 +83,33 @@ function createBonusModal() {
       let toRemove = document.querySelector(".bonus-modal");
       toRemove.style.opacity = "0";
       toRemove.style.transition = "opacity 300ms ease-in";
-      document.querySelector(".bg-modal").style.transition = "opacity 300ms ease-out";
+      document.querySelector(".bg-modal").style.transition =
+        "opacity 300ms ease-out";
       document.querySelector(".bg-modal").style.opacity = "0";
-      document.querySelector(".bg-modal").remove();
 
       setTimeout(() => {
         toRemove.remove();
+        document.querySelector(".bg-modal").remove();
       }, 600);
     });
   });
 }
 
-
-
 //FUNCTION create error bonus
 function errorBonus() {
   let errorModal = document.createElement("div");
   errorModal.className = "error-modal";
+
+  let errorBG = document.createElement("div");
+  errorBG.className = "error-bg";
+  document.body.appendChild(errorBG);
+  errorBG.style.position = "fixed";
+  errorBG.style.left = "0";
+  errorBG.style.top = "0";
+  errorBG.style.width = "100%";
+  errorBG.style.height = "100vh";
+  errorBG.style.backgroundColor = "var(--main-black)";
+  errorBG.style.opacity = ".95";
 
   let errorMessage = document.createElement("span");
   errorMessage.className = "sub";
@@ -130,11 +140,15 @@ function errorBonus() {
   errorBtn.addEventListener("click", () => {
     errorModal.style.opacity = "0";
     errorModal.style.transition = "opacity 300ms ease-in";
+    errorBG.style.transition = "opacity 300ms ease-out";
+    errorBG.style.opacity = "0";
     setTimeout(() => {
       document.querySelector(".error-modal").remove();
+      errorBG.remove();
     }, 600);
   });
 }
+
 
 // Check if the bonus has already been applied
 let noCheat = 0;
