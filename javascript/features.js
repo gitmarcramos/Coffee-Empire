@@ -149,7 +149,6 @@ function errorBonus() {
   });
 }
 
-
 // Check if the bonus has already been applied
 let noCheat = 0;
 
@@ -198,4 +197,26 @@ document.querySelector("input").addEventListener("keypress", function (e) {
 
     inputValue.value = "";
   }
+});
+
+// Restart game
+
+const dangerBtn = document.querySelector(".danger-btn");
+const restartModal = document.querySelector(".restart-game-modal");
+const confirmRestart = document.querySelector(".btn--restart");
+const cancelRestart = document.querySelector(".cancel-restart");
+
+dangerBtn.addEventListener("click", () => {
+  restartModal.classList.toggle("closed");
+});
+
+confirmRestart.addEventListener("click", () => {
+  //needs to restart the game as well
+
+  console.log("restart");
+  restartModal.classList.toggle("closed");
+});
+
+cancelRestart.addEventListener("click", () => {
+  restartModal.classList.toggle("closed");
 });
