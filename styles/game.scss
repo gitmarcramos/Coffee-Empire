@@ -62,6 +62,7 @@ section {
     padding: 1.2rem 1.6rem;
     background-color: var(--white);
     border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(47, 37, 37, 0.1);
 
     h2 {
         margin-bottom: 1.6rem;
@@ -109,6 +110,7 @@ section {
     white-space: nowrap;
     display: flex;
     margin-right: -.8rem;
+    padding-bottom: 1rem;
 
     .card {
         margin-right: 1.6rem;
