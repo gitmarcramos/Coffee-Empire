@@ -27,5 +27,3 @@ if(areCookiesAccepted === false) {
 } else if(areCookiesAccepted === true) {
     cookiesModal.classList.add("hidden");
 }
-
-console.log(areCookiesAccepted);

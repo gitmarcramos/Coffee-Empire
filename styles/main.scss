@@ -86,6 +86,7 @@ a {
     text-align: center;
 }
 
+
 .btn--secondary {
     width: 100%;
     text-align: center;
@@ -135,6 +136,14 @@ a {
 .disabled {
     opacity: 0.5;
     cursor: none;
+}
+
+.success-color {
+    color: var(--success);
+}
+
+.forV2{
+    display: none;
 }
 
 ////////////////////////////////////////////////////////////////////////////

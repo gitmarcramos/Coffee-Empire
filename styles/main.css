@@ -135,6 +135,14 @@ a {
   cursor: none;
 }
 
+.success-color {
+  color: var(--success);
+}
+
+.forV2 {
+  display: none;
+}
+
 header {
   width: 100%;
   min-height: 80px;

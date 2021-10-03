@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
     <title>Coffee Empire</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/game.css">
@@ -191,7 +191,7 @@
                         <h2 class="sub">Regular coffee</h2>
                         <div class="price-element">
                             <span class="dollar">$</span>
-                            <span class="price title">1</span>
+                            <span class="price title">1.00</span>
                         </div>
                     </div>
                     <div class="coffee-satisfaction">
@@ -200,12 +200,12 @@
                     </div>
 
                     <div class="btn-container">
-                        <div class="btn btn__low">Lower</div>
-                        <div class="btn btn__raise">Raise</div>
+                        <div class="btn btn__low set-coffee regular-coffee">Lower</div>
+                        <div class="btn btn__raise set-coffee regular-coffee" >Raise</div>
                     </div>
                 </div>
 
-                <div class="card scroll-card">
+                <div class="card scroll-card forV2">
                     <div class="coffee-type">
                         <h2 class="sub">Organic coffee</h2>
                         <div class="price-element">
@@ -219,12 +219,12 @@
                     </div>
 
                     <div class="btn-container">
-                        <div class="btn btn__low">Lower</div>
-                        <div class="btn btn__raise">Raise</div>
+                        <div class="btn btn__low set-coffee premium-coffee">Lower</div>
+                        <div class="btn btn__raise set-coffee premium-coffee">Raise</div>
                     </div>
                 </div>
 
-                <div class="card scroll-card">
+                <div class="card scroll-card forV2">
                     <div class="coffee-type">
                         <h2 class="sub">Rare coffee</h2>
                         <div class="price-element">
@@ -238,8 +238,8 @@
                     </div>
 
                     <div class="btn-container">
-                        <div class="btn btn__low">Lower</div>
-                        <div class="btn btn__raise">Raise</div>
+                        <div class="btn btn__low set-coffee rare-coffee">Lower</div>
+                        <div class="btn btn__raise set-coffee rare-coffee">Raise</div>
                     </div>
                 </div>
 
@@ -265,16 +265,16 @@
 
                     <div class="stock-infos">
                         <div class="stock__infos stock__infos--buying-price">
-                            <span class="bodyText">Buying price:</span>
+                            <span class="bodyText">Buying price <br> (for 100 coffes):</span>
                             <div class="price-element">
                                 <span class="dollar">$</span>
                                 <span class="price bodyText bolder">3</span>
                             </div>
                         </div>
-                        <div class="stock__infos stock__infos--quantity">
+                        <!-- <div class="stock__infos stock__infos--quantity">
                             <span class="bodyText">Quantity:</span>
                             <span class="bodyText bolder">100</span>
-                        </div>
+                        </div> -->
                         <div class="stock__infos stock__infos--clients-satisfaction">
                             <span class="bodyText">Client's satisfaction:</span>
                             <span class="bodyText bolder">+10%</span>
@@ -286,7 +286,7 @@
                     </div>
 
                     <div class="btn-container btn-container--horizontal">
-                        <div class="btn btn__raise">Buy Regular</div>
+                        <div class="btn btn__raise">Buy 100 Regular</div>
                         <div class="btn">Auto buy ($3.000)</div>
                     </div>
                 </div>
@@ -301,16 +301,16 @@
 
                     <div class="stock-infos">
                         <div class="stock__infos stock__infos--buying-price">
-                            <span class="bodyText">Buying price:</span>
+                            <span class="bodyText">Buying price <br> (for 100 coffees):</span>
                             <div class="price-element">
                                 <span class="dollar">$</span>
                                 <span class="price bodyText bolder">5</span>
                             </div>
                         </div>
-                        <div class="stock__infos stock__infos--quantity">
+                        <!-- <div class="stock__infos stock__infos--quantity">
                             <span class="bodyText">Quantity:</span>
                             <span class="bodyText bolder">100</span>
-                        </div>
+                        </div> -->
                         <div class="stock__infos stock__infos--clients-satisfaction">
                             <span class="bodyText">Client's satisfaction:</span>
                             <span class="bodyText bolder">+30%</span>
@@ -322,7 +322,7 @@
                     </div>
 
                     <div class="btn-container btn-container--horizontal">
-                        <div class="btn btn__raise">Buy Organic</div>
+                        <div class="btn btn__raise">Buy 100 Organic</div>
                         <div class="btn">Auto buy ($9.000)</div>
                     </div>
                 </div>
@@ -337,16 +337,16 @@
 
                     <div class="stock-infos">
                         <div class="stock__infos stock__infos--buying-price">
-                            <span class="bodyText">Buying price:</span>
+                            <span class="bodyText">Buying price <br> (for 25 coffees):</span>
                             <div class="price-element">
                                 <span class="dollar">$</span>
                                 <span class="price bodyText bolder">4</span>
                             </div>
                         </div>
-                        <div class="stock__infos stock__infos--quantity">
+                        <!-- <div class="stock__infos stock__infos--quantity">
                             <span class="bodyText">Quantity:</span>
                             <span class="bodyText bolder">25</span>
-                        </div>
+                        </div> -->
                         <div class="stock__infos stock__infos--clients-satisfaction">
                             <span class="bodyText">Client's satisfaction:</span>
                             <span class="bodyText bolder">+50%</span>
@@ -358,7 +358,7 @@
                     </div>
 
                     <div class="btn-container btn-container--horizontal">
-                        <div class="btn btn__raise">Buy Organic</div>
+                        <div class="btn btn__raise">Buy 25 Organic</div>
                         <div class="btn">Auto buy ($12.000)</div>
                     </div>
                 </div>
@@ -398,19 +398,19 @@
                         <div class="shop-employees-section">
                             <div class="shop-infos--item">
                                 <span class="bodyText">Employees hired:</span>
-                                <span class="bolder bodyText">1/2</span>
+                                <span class="bolder bodyText display-employees-hired">1/2</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Interns:</span>
-                                <span class="bodyText">1</span>
+                                <span class="bodyText display-shops-numbers-interns">1</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Baristas:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-baristas">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Master baristas:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-masters">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Employees' cost:</span>
@@ -432,16 +432,16 @@
                                 <div class="btn btn__raise">Buy shop</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Intern</div>
-                                <div class="btn primary-shade">Fire Intern</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Intern</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Intern</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Barista</div>
-                                <div class="btn primary-shade">Fire Barista</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Barista</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Barista</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Master</div>
-                                <div class="btn primary-shade">Fire Master</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Master</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Master</div>
                             </div>
                         </div>
                     </div>
@@ -472,19 +472,19 @@
                         <div class="shop-employees-section">
                             <div class="shop-infos--item">
                                 <span class="bodyText">Employees hired:</span>
-                                <span class="bolder bodyText danger">0/4</span>
+                                <span class="bolder bodyText display-employees-hired danger">0/4</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Interns:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-interns">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Baristas:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-baristas">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Master baristas:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-masters">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Employees' cost:</span>
@@ -506,16 +506,16 @@
                                 <div class="btn btn__raise">Buy shop</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Intern</div>
-                                <div class="btn primary-shade">Fire Intern</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Intern</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Intern</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Barista</div>
-                                <div class="btn primary-shade">Fire Barista</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Barista</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Barista</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Master</div>
-                                <div class="btn primary-shade">Fire Master</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Master</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Master</div>
                             </div>
                         </div>
                     </div>
@@ -546,19 +546,19 @@
                         <div class="shop-employees-section">
                             <div class="shop-infos--item">
                                 <span class="bodyText">Employees hired:</span>
-                                <span class="bolder bodyText danger">0/4</span>
+                                <span class="bolder bodyText display-employees-hired danger">0/8</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Interns:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-interns">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Baristas:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-baristas">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Master baristas:</span>
-                                <span class="bodyText">0</span>
+                                <span class="bodyText display-shops-numbers-masters">0</span>
                             </div>
                             <div class="shop-infos--item">
                                 <span class="bodyText">Employees' cost:</span>
@@ -580,16 +580,16 @@
                                 <div class="btn btn__raise">Buy shop</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Intern</div>
-                                <div class="btn primary-shade">Fire Intern</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Intern</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Intern</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Barista</div>
-                                <div class="btn primary-shade">Fire Barista</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Barista</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Barista</div>
                             </div>
                             <div class="btn-container">
-                                <div class="btn--secondary primary-shade--secondary">Hire Master</div>
-                                <div class="btn primary-shade">Fire Master</div>
+                                <div class="btn--secondary primary-shade--secondary set-employee-btn">Fire Master</div>
+                                <div class="btn primary-shade set-employee-btn">Hire Master</div>
                             </div>
                         </div>
                     </div>
@@ -610,6 +610,10 @@
                         <span class="sub">Intern</span>
                         <span class="sub">$ 600</span>
                     </div>
+                    <div class="employee-type__CS">
+                        <span class="bodyText">Clients' satisfaction:</span>
+                        <span class="bolder bodyText">-15%</span>
+                    </div>
                     <div class="btn-container">
                         <div class="btn btn__low">Lower</div>
                         <div class="btn btn__raise">Raise</div>
@@ -621,6 +625,10 @@
                         <span class="sub">Barista</span>
                         <span class="sub">$ 2.200</span>
                     </div>
+                    <div class="employee-type__CS">
+                        <span class="bodyText">Clients' satisfaction:</span>
+                        <span class="bolder bodyText">+20%</span>
+                    </div>
                     <div class="btn-container">
                         <div class="btn btn__low">Lower</div>
                         <div class="btn btn__raise">Raise</div>
@@ -631,6 +639,10 @@
                     <div class="employee-type__employee">
                         <span class="sub">Master barista</span>
                         <span class="sub">$ 2.800</span>
+                    </div>
+                    <div class="employee-type__CS">
+                        <span class="bodyText">Clients' satisfaction:</span>
+                        <span class="bolder bodyText">+40%</span>
                     </div>
                     <div class="btn-container">
                         <div class="btn btn__low">Lower</div>
@@ -759,7 +771,7 @@
             </div>
             <p class="thanks grey">UI/UX and web development: Marc Ramos. <br> Original soundtrack recording: Max Lanna
                 <br><br>
-                Big thanks to Matthieu Raynaud for his help!</p>
+                Big thanks to Matthieu Raynaud and Nicolas Gieules for their help and feedback!</p>
         </footer>
 
         <div class="navbar nav-closed" id="navbar">
@@ -812,6 +824,7 @@
             <a href="cookie-policy.html" class="bodyText">Learn more</a>
         </div>
 
+        <script src="/javascript/logic.js"></script>
         <script src="/javascript/cookies-modal.js"></script>
         <script src="/javascript/app.js"></script>
         <script src="/javascript/features.js"></script>
