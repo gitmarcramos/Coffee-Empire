@@ -36,35 +36,35 @@ export function addStock(index) {
 }
 
 //! compute the cost per coffee
-export const pricePerCoffee = function(object) {
+export const pricePerCoffee = function (object) {
   return object.buyingPrice / object.stockPerBag;
-}
+};
 
 //! compute the benefits per coffee, according the coffee price set by user
-const benefitsPerCoffee = function(object){
-
-}
+const benefitsPerCoffee = function (object) {};
 
 //! BUY SHOP
 export function buyShop(index) {
-  if (index === 1) {
+  if (index === 1 && generalFunds.funds > shops[0].price) {
     shops[0].amount += 1;
     shops[0].maxToHire += 2;
     shops[0].rent += 250;
     shops[0].maxCoffeeCapacity += 6;
     generalFunds.funds -= shops[0].price;
-  } else if (index === 3) {
+  }
+  if (index === 3 && generalFunds.funds > shops[1].price) {
     shops[1].amount += 1;
     shops[1].maxToHire += 4;
     shops[1].rent += 650;
     shops[1].maxCoffeeCapacity += 8;
     generalFunds.funds -= shops[1].price;
-  } else if (index === 5) {
+  } else if (index === 5 && generalFunds.funds > shops[2].price) {
     shops[2].amount += 1;
     shops[2].maxToHire += 6;
     shops[2].rent += 4550;
     shops[2].maxCoffeeCapacity += 12;
     generalFunds.funds -= shops[2].price;
+    shopsCards[2].classList.remove("disabled-card");
   }
 }
 
@@ -75,16 +75,19 @@ export function sellShop(index) {
     shops[0].maxToHire -= 2;
     shops[0].rent -= 250;
     shops[0].maxCoffeeCapacity -= 6;
+    generalFunds.funds += shops[0].sellingPriceValue;
   } else if (index === 2 && shops[1].amount > 0) {
     shops[1].amount -= 1;
     shops[1].maxToHire -= 4;
     shops[1].rent -= 650;
     shops[1].maxCoffeeCapacity -= 8;
+    generalFunds.funds += shops[1].sellingPriceValue;
   } else if (index === 4 && shops[2].amount > 0) {
     shops[2].amount -= 1;
     shops[2].maxToHire -= 6;
     shops[2].rent -= 4550;
     shops[2].maxCoffeeCapacity -= 12;
+    generalFunds.funds += shops[2].sellingPriceValue;
   }
 }
 

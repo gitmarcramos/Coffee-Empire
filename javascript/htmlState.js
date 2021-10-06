@@ -1,14 +1,5 @@
 import { shops, stocks, generalFunds } from "./objects.js";
 
-//! =====> for game start
-function startGame() {
-  const startFunds = (document.querySelector(
-    "#company-funds_available"
-  ).innerText = 10000);
-  generalFunds.funds += 10000;
-}
-startGame();
-
 const actualState = {};
 
 function refresh(object) {
@@ -176,12 +167,31 @@ function refresh(object) {
     actualState.stateRareCoffeePrice
   );
 
-  // calculate the total coffees benefits
-  let totalCoffeesBenefits = Number(
-    (regCoffeeBenefits + premCoffeeBenefits + rareCoffeeBenefits).toFixed(2)
-  );
 
-  console.log(totalCoffeesBenefits);
+
+  // calculate the total coffees benefits
+//   let totalCoffeesBenefits = 0;
+//   if (stocks[0].quantity > 0) {
+//     totalCoffeesBenefits += Number(regCoffeeBenefits.toFixed(2));
+//   } else if (stocks[0].quantity > 0 && stocks[1].quantity > 0) {
+//     totalCoffeesBenefits +=
+//       (Number(regCoffeeBenefits.toFixed(2)) +
+//       Number(premCoffeeBenefits.toFixed(2)));
+//   }
+
+//   let totalCoffeesBenefits = Number(
+//     (regCoffeeBenefits + premCoffeeBenefits + rareCoffeeBenefits).toFixed(2)
+//   );
+
+  const shopsCards = document.querySelectorAll(".card.scroll-card.my-shops");
+
+  if (generalFunds.funds < shops[0].price) {
+    shopsCards[0].classList.add("disabled-card");
+  } else if (generalFunds.funds < shops[1].price) {
+    shopsCards[1].classList.add("disabled-card");
+  } else if (generalFunds.funds < shops[2].price) {
+    shopsCards[2].classList.add("disabled-card");
+  }
 }
 
 //! ============================ To Start the interval =========================== //

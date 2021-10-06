@@ -1,8 +1,6 @@
-//! affichage dynamique : mettre dans une fonction SetInterval
-
 import { coffees } from "./objects.js";
 import { stocks } from "./objects.js";
-import { shops } from "./objects.js";
+import { shops, generalFunds } from "./objects.js";
 import { calculateEmployeesCost } from "./functions.js";
 
 //! COFFEES
@@ -43,7 +41,7 @@ allCoffeesBtn.forEach((btn, index) => {
 //coffees stock
 const coffeesLeft = document.querySelectorAll(".coffees_stocks-left");
 const myCompanyCoffeesStock = document.querySelector("#company-coffees-stock");
-myCompanyCoffeesStock.innerText = 0
+myCompanyCoffeesStock.innerText = 0;
 
 coffeesLeft[0].innerText = stocks[0].quantity;
 coffeesLeft[1].innerText = stocks[1].quantity;

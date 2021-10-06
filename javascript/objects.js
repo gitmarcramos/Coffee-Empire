@@ -4,6 +4,16 @@ export const generalFunds = {
 }
 
 
+//! =====> for game start
+function startGame() {
+  const startFunds = (document.querySelector(
+    "#company-funds_available"
+  ).innerText = 10000);
+  generalFunds.funds += 10000;
+}
+startGame();
+
+
 //! COFFEES
 export const coffees = [
   { type: "regular", price: 1, clientSatisfaction: 10 },
