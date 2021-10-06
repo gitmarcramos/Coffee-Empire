@@ -8,9 +8,9 @@
     <title>Coffee Empire</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/game.css">
-    <script type="module" defer src="/javascript/objects.js"></script>
-    <script type="module" defer src="/javascript/display.js"></script>
-    <script typpe="module" defer src="/javascript/htmlState.js"></script>
+    <script type="module" src="/javascript/objects.js"></script>
+    <script type="module" src="/javascript/display.js"></script>
+    <script type="module" src="/javascript/htmlState.js"></script>
 </head>
 
 <body>
@@ -63,7 +63,7 @@
                         <h2 class="bodyText">Average revenue per hour:</h2>
                         <div class="money">
                             <span class="bodyText">$</span>
-                            <h3 class="sub company_infos" id="company-average_revenue_hour"> ?</h3>
+                            <h3 class="sub company_infos" id="company-average_revenue_hour">-------</h3>
                         </div>
                     </div>
                     <svg class="company_infos_svg" id="company-average_revenue_arrow" width="18" height="18"
@@ -99,9 +99,28 @@
 
                 <div class="card-info">
                     <div class="card-info-money">
+                        <h2 class="bodyText">Coffees stock:</h2>
+                        <div class="money">
+                            <h3 class="sub company_infos" id="company-coffees-stock">----</h3>
+                        </div>
+                    </div>
+                    <svg class="company_infos_svg" id="company-coffees_hour_arrow" width="18" height="18"
+                        viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 17.5C4.30558 17.5 0.499999 13.6944 0.5 9C0.5 4.30558 4.30558 0.499999 9 0.5C13.6944 0.5 17.5 4.30558 17.5 9C17.5 13.6944 13.6944 17.5 9 17.5Z"
+                            fill="#FF9C06" stroke="white" />
+                        <path d="M13.2232 8.9532L4.87052 8.9532" stroke="white" stroke-width="1.125"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.74292 5.47278L13.2232 8.95307L9.74292 12.4334" stroke="white" stroke-width="1.125"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <div class="card-info">
+                    <div class="card-info-money">
                         <h2 class="bodyText">Customer's satisfaction:</h2>
                         <div class="money">
-                            <h3 class="sub company_infos" id="company-customer_satisfaction">? %</h3>
+                            <h3 class="sub company_infos" id="company-customer_satisfaction">------- %</h3>
                         </div>
                     </div>
                     <svg class="company_infos_svg" id="company-customer_satisfaction_arrow" width="18" height="18"
@@ -160,7 +179,7 @@
                     <div class="card-info-money">
                         <h2 class="bodyText">Employee's satisfaction:</h2>
                         <div class="money">
-                            <h3 class="sub company_infos" id="company-employee_satisfaction">? %</h3>
+                            <h3 class="sub company_infos" id="company-employee_satisfaction">------- %</h3>
                         </div>
                     </div>
                     <svg class="company_infos_svg" id="company-employees_satisfaction_arrow" width="18" height="18"
@@ -220,7 +239,7 @@
                         <h2 class="sub">Organic coffee</h2>
                         <div class="price-element">
                             <span class="dollar">$</span>
-                            <span class="price title company_coffee_price">1.20</span>
+                            <span class="price title company_coffee_price" id="premium-coffee-price">1.20</span>
                         </div>
                     </div>
                     <div class="coffee-satisfaction">
@@ -239,7 +258,7 @@
                         <h2 class="sub">Rare coffee</h2>
                         <div class="price-element">
                             <span class="dollar">$</span>
-                            <span class="price title company_coffee_price">1.50</span>
+                            <span id="rare-coffee-price" class="price title company_coffee_price">1.50</span>
                         </div>
                     </div>
                     <div class="coffee-satisfaction">
@@ -291,7 +310,7 @@
                         </div>
                         <div class="stock__infos stock__infos--coffees-left">
                             <span class="bodyText">Coffees left:</span>
-                            <span class="title coffees_stocks-left">100</span>
+                            <span id="regular-coffees-left" class="title coffees_stocks-left">100</span>
                         </div>
                     </div>
 
@@ -327,7 +346,7 @@
                         </div>
                         <div class="stock__infos stock__infos--coffees-left">
                             <span class="bodyText">Coffees left:</span>
-                            <span class="title danger coffees_stocks-left">0</span>
+                            <span id="premium-coffees-left" class="title danger coffees_stocks-left">0</span>
                         </div>
                     </div>
 
@@ -363,7 +382,7 @@
                         </div>
                         <div class="stock__infos stock__infos--coffees-left">
                             <span class="bodyText">Coffees left:</span>
-                            <span class="title danger coffees_stocks-left">0</span>
+                            <span id="rare-coffees-left" class="title danger coffees_stocks-left">0</span>
                         </div>
                     </div>
 
