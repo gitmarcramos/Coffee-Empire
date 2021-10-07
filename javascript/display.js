@@ -1,13 +1,17 @@
 import { coffees } from "./objects.js";
 import { stocks } from "./objects.js";
 import { shops, generalFunds } from "./objects.js";
-import { calculateEmployeesCost } from "./functions.js";
+import { calculateEmployeesCost, autoBuyBtn } from "./functions.js";
 
 //! COFFEES
 //coffee price
 const allCoffeesPrice = document.querySelectorAll(".company_coffee_price");
 
 //set coffees price from the objects.js
+allCoffeesPrice[0].innerText = coffees[0].price.toFixed(2)
+allCoffeesPrice[1].innerText = coffees[1].price.toFixed(2)
+allCoffeesPrice[2].innerText = coffees[2].price.toFixed(2)
+
 function updatePrice() {
   allCoffeesPrice[0].innerText = coffees[0].price.toFixed(2);
   allCoffeesPrice[1].innerText = coffees[1].price.toFixed(2);
@@ -71,9 +75,11 @@ allCoffeesStockButtons.forEach((coffeeStockBtn, index) => {
     if (coffeeStockBtn.classList.contains("btn__raise")) {
       addStock(index);
       updateStocks();
+      generalFunds.funds -= stocks[index].buyingPrice;
     } else {
       //! NEED TO CREATE AUTOBUY BUTTON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      console.log(index, "auto buy");
+      autoBuyBtn(index)
+      updateStocks();
     }
   });
 });
@@ -95,6 +101,9 @@ function updateShopdisplay() {
 // =================================================================
 //shop price
 const shopsPrice = document.querySelectorAll(".shop_price");
+for (let i = 0; i < shopsPrice.length; i++) {
+  shopsPrice[i].innerText = shops[i].price;
+}
 
 // =================================================================
 //shop rent
@@ -208,9 +217,9 @@ const companyAllCoffees = document.querySelector("#company-coffees-hour");
 
 for (let i = 0; i < coffeesPerHour.length; i++) {
   if (i === 0) {
-    coffeesPerHour[i].innerText = shops[i].hired * 3;
+    coffeesPerHour[i].innerText = shops[i].hired * 6;
   } else if (i === 1 || i === 2) {
-    coffeesPerHour[i].innerText = shops[i].hired * 2;
+    coffeesPerHour[i].innerText = shops[i].hired * 6;
   }
   companyAllCoffees.innerText = shops[i].hired;
 }
@@ -220,11 +229,11 @@ function updateCoffeesPerHour() {
 
   for (let i = 0; i < coffeesPerHour.length; i++) {
     if (i === 0) {
-      coffeesPerHour[i].innerText = shops[i].hired * 3;
-      totalCoffees += shops[i].hired * 3;
+      coffeesPerHour[i].innerText = shops[i].hired * 6;
+      totalCoffees += shops[i].hired * 6;
     } else if (i === 1 || i === 2) {
-      coffeesPerHour[i].innerText = shops[i].hired * 2;
-      totalCoffees += shops[i].hired * 2;
+      coffeesPerHour[i].innerText = shops[i].hired * 6;
+      totalCoffees += shops[i].hired * 6;
     }
   }
   companyAllCoffees.innerText = totalCoffees;
@@ -278,7 +287,6 @@ fireInterns.forEach((firedIntern, index) => {
     updateEmployeesCost();
     updateEmployeesHired();
     updateCoffeesPerHour();
-    // updateMyCompany();
   });
 });
 const hireInterns = document.querySelectorAll(".employee-hire__intern");

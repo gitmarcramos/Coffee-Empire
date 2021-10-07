@@ -1,3 +1,6 @@
+import { generalFunds } from "./objects.js";
+
+
 //company name
 const companyName = document.querySelector("#company-name");
 const editCompanyName = document.querySelector("#edit-company-name");
@@ -156,12 +159,12 @@ let noCheat = 0;
 document.querySelector("button").addEventListener("click", () => {
   if (inputValue.value === "") {
     companyName.innerText = "";
-  } else if (inputValue.value === "Jeanne" && noCheat < 1) {
-    updateName("Jeanne");
+  } else if (inputValue.value === "Ironhack" && noCheat < 1) {
+    updateName("Ironhack");
     noCheat++;
     createBonusModal();
     companyForm.classList.add("hidden");
-  } else if (inputValue.value === "Jeanne" && noCheat >= 1) {
+  } else if (inputValue.value === "Ironhack" && noCheat >= 1) {
     noCheat++;
     errorBonus();
     companyForm.classList.add("hidden");
@@ -179,13 +182,13 @@ document.querySelector("input").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     if (inputValue.value === "") {
       companyName.innerText = "";
-    } else if (inputValue.value === "Jeanne" && noCheat < 1) {
-      updateName("Jeanne");
+    } else if (inputValue.value === "Ironhack" && noCheat < 1) {
+      updateName("Ironhack");
       noCheat++;
       console.log(noCheat);
       createBonusModal();
       companyForm.classList.add("hidden");
-    } else if (inputValue.value === "Jeanne" && noCheat >= 1) {
+    } else if (inputValue.value === "Ironhack" && noCheat >= 1) {
       noCheat++;
       errorBonus();
       companyForm.classList.add("hidden");
@@ -220,3 +223,13 @@ confirmRestart.addEventListener("click", () => {
 cancelRestart.addEventListener("click", () => {
   restartModal.classList.toggle("closed");
 });
+
+
+// ===> Accept Bonus
+//TODO
+// const acceptBonus = document.querySelector('#accept-bonus');
+
+// acceptBonus.addEventListener("click", () => {
+//   generalFunds.funds += 1000000
+// })
+

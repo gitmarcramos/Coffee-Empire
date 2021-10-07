@@ -1,4 +1,11 @@
-import { shops, stocks, generalFunds } from "./objects.js";
+import {
+  shops,
+  stocks,
+  generalFunds,
+  coffees,
+  employeesSalariesInfos,
+} from "./objects.js";
+import { calculateEmployeesHired } from "./functions.js";
 
 const actualState = {};
 
@@ -13,7 +20,7 @@ function refresh(object) {
     document.querySelector("#company-average_revenue_hour").innerText
   );
 
-  // coffees per hour
+  // coffees per hour / production capacity
   actualState.stateCoffeesPerHour = Number(
     document.querySelector("#company-coffees-hour").innerText
   );
@@ -53,17 +60,15 @@ function refresh(object) {
     document.querySelector("#regular-coffees-left ").innerText
   );
   //====> update regular stock
+  // TODO add conditions avec remainder pour ne pas que aller en dessous de ZERO
   if (actualState.stateRegularCoffeeStock > 0) {
     stocks[0].quantity -= actualState.stateCoffeesPerHour;
     document.querySelector("#regular-coffees-left").classList.remove("danger");
-    document.querySelector("#company-coffees-stock").classList.remove("danger");
     document.querySelector("#regular-coffees-left ").innerText =
       stocks[0].quantity;
   } else {
-    document.querySelector("#company-coffees-stock").innerText = 0;
     document.querySelector("#regular-coffees-left ").innerText = 0;
     document.querySelector("#regular-coffees-left ").classList.add("danger");
-    document.querySelector("#company-coffees-stock").classList.add("danger");
   }
 
   // premium coffee stocks
@@ -74,23 +79,60 @@ function refresh(object) {
   if (actualState.statePremiumCoffeeStock > 0) {
     stocks[1].quantity -= actualState.stateCoffeesPerHour;
     document.querySelector("#premium-coffees-left").classList.remove("danger");
-    document.querySelector("#company-coffees-stock").classList.remove("danger");
     document.querySelector("#premium-coffees-left ").innerText =
       stocks[1].quantity;
   } else {
-    document.querySelector("#company-coffees-stock").innerText = 0;
     document.querySelector("#premium-coffees-left ").innerText = 0;
     document.querySelector("#premium-coffees-left ").classList.add("danger");
-    document.querySelector("#company-coffees-stock").classList.add("danger");
   }
-
-  document.querySelector("#company-coffees-stock").innerText =
-    stocks[0].quantity + stocks[1].quantity + stocks[2].quantity;
 
   // rare coffee stocks
   actualState.stateRareCoffeeStock = Number(
     document.querySelector("#rare-coffees-left").innerText
   );
+  //====> update rare stock
+  if (actualState.stateRareCoffeeStock > 0) {
+    stocks[2].quantity -= actualState.stateCoffeesPerHour;
+    document.querySelector("#rare-coffees-left").classList.remove("danger");
+    document.querySelector("#rare-coffees-left ").innerText =
+      stocks[2].quantity;
+  } else {
+    document.querySelector("#rare-coffees-left ").innerText = 0;
+    document.querySelector("#rare-coffees-left ").classList.add("danger");
+  }
+
+  // Autobuy BTN state
+  //   if (stocks[0].isAutoBuy === true) {
+  //     stocks[0].quantity += 100;
+  //     generalFunds.funds -= stocks[0].buyingPrice;
+  //     document.querySelector("#regular-coffees-left").innerText = "∞"
+  //   } else if(stocks[1].isAutoBuy === true){
+  //     stocks[1].quantity += 100;
+  //     generalFunds.funds -= stocks[1].buyingPrice;
+  //     document.querySelector("#premium-coffees-left").innerText = "∞"
+  //   } else if(stocks[2].isAutoBuy === true){
+  //     stocks[2].quantity += 25;
+  //     generalFunds.funds -= stocks[2].buyingPrice;
+  //     document.querySelector("#rare-coffees-left").innerText = "∞"
+  //   }
+
+  const autoBuyOff = document.querySelectorAll(".autobuy");
+  autoBuyOff.forEach((btn) => {
+    btn.style.display = "none";
+  });
+
+  // Update the total coffee stock in dashboard
+  document.querySelector("#company-coffees-stock").innerText =
+    stocks[0].quantity + stocks[1].quantity + stocks[2].quantity;
+
+  // add/remove danger class
+  if (
+    Number(document.querySelector("#company-coffees-stock").innerText) !== 0
+  ) {
+    document.querySelector("#company-coffees-stock").classList.remove("danger");
+  } else {
+    document.querySelector("#company-coffees-stock").classList.add("danger");
+  }
 
   // tinyshop total
   actualState.stateTinyShopAmount = Number(
@@ -100,8 +142,6 @@ function refresh(object) {
     document.querySelector("#tiny-shop-total").classList.remove("danger");
   } else {
     document.querySelector("#tiny-shop-total").classList.add("danger");
-    // document.querySelector('#tiny-shop-employees-hired').innerText = 0;
-    // document.querySelector('#tiny-shop-total-intern').innerText = 0;
   }
 
   // barista shop total
@@ -112,8 +152,6 @@ function refresh(object) {
     document.querySelector("#barista-shop-total").classList.remove("danger");
   } else {
     document.querySelector("#barista-shop-total").classList.add("danger");
-    // document.querySelector('#barista-shop-employees-hired').innerText = 0;
-    // document.querySelector('#barista-shop-total-intern').innerText = 0;
   }
 
   // =================== CALCULATE EXPENSES =================== //
@@ -167,30 +205,146 @@ function refresh(object) {
     actualState.stateRareCoffeePrice
   );
 
+  const coffeesBenefitsArray = [
+    regCoffeeBenefits,
+    premCoffeeBenefits,
+    rareCoffeeBenefits,
+  ];
 
+  // ====> calculate the total coffees benefits
+  // first we find the capacity production for each coffee type, then calculate the benefits for each type according to its production
 
-  // calculate the total coffees benefits
-//   let totalCoffeesBenefits = 0;
-//   if (stocks[0].quantity > 0) {
-//     totalCoffeesBenefits += Number(regCoffeeBenefits.toFixed(2));
-//   } else if (stocks[0].quantity > 0 && stocks[1].quantity > 0) {
-//     totalCoffeesBenefits +=
-//       (Number(regCoffeeBenefits.toFixed(2)) +
-//       Number(premCoffeeBenefits.toFixed(2)));
-//   }
+  let regCoffeesProducted = 0;
+  let premiumCoffeesProducted = 0;
+  let rareCoffeesProducted = 0;
 
-//   let totalCoffeesBenefits = Number(
-//     (regCoffeeBenefits + premCoffeeBenefits + rareCoffeeBenefits).toFixed(2)
-//   );
+  if (actualState.stateTotalStock <= actualState.stateCoffeesPerHour) {
+    regCoffeesProducted = actualState.stateRegularCoffeeStock;
+    premiumCoffeesProducted = actualState.statePremiumCoffeeStock;
+    rareCoffeesProducted = actualState.stateRareCoffeeStock;
+  } else {
+    regCoffeesProducted =
+      (actualState.stateRegularCoffeeStock / actualState.stateTotalStock) *
+      actualState.stateCoffeesPerHour;
 
+    premiumCoffeesProducted =
+      (actualState.statePremiumCoffeeStock / actualState.stateTotalStock) *
+      actualState.stateCoffeesPerHour;
+
+    rareCoffeesProducted =
+      (actualState.stateRareCoffeeStock / actualState.stateTotalStock) *
+      actualState.stateCoffeesPerHour;
+  }
+
+  //=====> now we calculate the benefits
+  let regularCoffeesBenefitsAfterSale = regCoffeesProducted * regCoffeeBenefits;
+
+  let premiumCoffeesBenefitsAfterSale =
+    premiumCoffeesProducted * premCoffeeBenefits;
+
+  let rareCoffeesBenefitsAfterSale = rareCoffeesProducted * rareCoffeeBenefits;
+
+  generalFunds.funds +=
+    regularCoffeesBenefitsAfterSale +
+    premiumCoffeesBenefitsAfterSale +
+    rareCoffeesBenefitsAfterSale;
+
+  // =============> COMPUTE PROFITS <================
+  let allInternsHired = document.querySelectorAll(
+    ".bodyText.display-shops-numbers-interns"
+  );
+  let allBaristasHired = document.querySelectorAll(
+    ".display-shops-numbers-baristas"
+  );
+  let allMastersHired = document.querySelectorAll(
+    ".display-shops-numbers-masters"
+  );
+
+  let internsCost =
+    (Number(allInternsHired[0].innerText) +
+      Number(allInternsHired[1].innerText) +
+      Number(allInternsHired[2].innerText)) *
+    employeesSalariesInfos[0].salary;
+
+  let baristasCost =
+    (Number(allBaristasHired[0].innerText) +
+      Number(allBaristasHired[1].innerText) +
+      Number(allBaristasHired[2].innerText)) *
+    employeesSalariesInfos[1].salary;
+
+  let masterCost =
+    (Number(allMastersHired[0].innerText) +
+      Number(allMastersHired[1].innerText) +
+      Number(allMastersHired[2].innerText)) *
+    employeesSalariesInfos[2].salary;
+
+  let totalEmployeesCost = internsCost + baristasCost + masterCost;
+
+  let averageRevenuePerHour =
+    regularCoffeesBenefitsAfterSale +
+    premiumCoffeesBenefitsAfterSale +
+    rareCoffeesBenefitsAfterSale -
+    totalEmployeesCost -
+    shops[0].rent -
+    shops[1].rent -
+    shops[2].rent;
+
+    document.querySelector("#company-average_revenue_hour").innerText = averageRevenuePerHour
+
+  // ====> able or disable the shop cards if not enough money
   const shopsCards = document.querySelectorAll(".card.scroll-card.my-shops");
 
-  if (generalFunds.funds < shops[0].price) {
-    shopsCards[0].classList.add("disabled-card");
-  } else if (generalFunds.funds < shops[1].price) {
-    shopsCards[1].classList.add("disabled-card");
-  } else if (generalFunds.funds < shops[2].price) {
-    shopsCards[2].classList.add("disabled-card");
+  for (let i = 0; i < shopsCards.length; i++) {
+    if (generalFunds.funds < shops[i].price) {
+      shopsCards[i].classList.add("disabled-card");
+    } else {
+      shopsCards[i].classList.remove("disabled-card");
+    }
+  }
+
+  // ====> able or disable the coffee cards if no stocks
+  const coffeeCards = document.querySelectorAll(".coffee-card");
+
+  for (let i = 0; i < stocks.length; i++) {
+    if (stocks[i].quantity <= 0) {
+      coffeeCards[i].classList.add("disabled-card");
+    } else {
+      coffeeCards[i].classList.remove("disabled-card");
+    }
+  }
+
+  // ========> able or disable the buy stocks if no money
+  const stockCards = document.querySelectorAll(".coffee-stocks");
+  for (let i = 0; i < stockCards.length; i++) {
+    if (generalFunds.funds <= 0) {
+      stockCards[i].classList.add("disabled-card");
+    } else {
+      stockCards[i].classList.remove("disabled-card");
+    }
+  }
+
+  //======> able / disable AUTOBUY btns
+  const autoBuy = document.querySelectorAll(".autobuy");
+
+  // for Regular
+  if (generalFunds.funds <= 3000) {
+    autoBuy[0].classList.add("disabled-btn");
+  } else {
+    autoBuy[0].classList.remove("disabled-btn");
+  }
+
+  // for Premium
+  if (generalFunds.funds <= 9000) {
+    autoBuy[1].classList.add("disabled-btn");
+  } else {
+    autoBuy[1].classList.remove("disabled-btn");
+  }
+
+  // for Rare
+  if (generalFunds.funds <= 12000) {
+    autoBuy[2].classList.add("disabled-btn");
+  } else {
+    autoBuy[2].classList.remove("disabled-btn");
   }
 }
 

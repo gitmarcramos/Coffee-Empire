@@ -16,9 +16,9 @@ startGame();
 
 //! COFFEES
 export const coffees = [
-  { type: "regular", price: 1, clientSatisfaction: 10 },
-  { type: "organic", price: 1.2, clientSatisfaction: 30 },
-  { type: "rare", price: 1.5, clientSatisfaction: 50 },
+  { type: "regular", price: 2, clientSatisfaction: 10 },
+  { type: "organic", price: 2.2, clientSatisfaction: 30 },
+  { type: "rare", price: 2.5, clientSatisfaction: 50 },
 ];
 
 function costPerCoffee(amount, buyingPrice) {
@@ -42,24 +42,27 @@ function costPerCoffee(amount, buyingPrice) {
 export const stocks = [
   {
     name: "regular",
-    buyingPrice: 3,
+    buyingPrice: 30,
     quantity: 0,
     clientSatisfaction: 10,
-    stockPerBag: 100,
+    stockPerBag: 1000,
+    isAutoBuy: false
   },
   {
     name: "organic",
-    buyingPrice: 5,
+    buyingPrice: 50,
     quantity: 0,
     clientSatisfaction: 30,
-    stockPerBag: 100,
+    stockPerBag: 1000,
+    isAutoBuy: false
   },
   {
     name: "rare",
-    buyingPrice: 4,
+    buyingPrice: 40,
     quantity: 0,
     clientSatisfaction: 50,
-    stockPerBag: 25,
+    stockPerBag: 250,
+    isAutoBuy: false
   },
 ];
 
@@ -73,9 +76,9 @@ export const shops = [
   {
     name: "Tiny Shop",
     amount: 0,
-    sellingPriceValue: 3000,
-    price: 3200,
-    rent: 250 * 1 - 250,
+    sellingPriceValue: 1000,
+    price: 1200,
+    rent: 100 * 1 - 100,
     hired: 0,
     maxToHire: 2 * 1 - 2,
     employeesType: [
@@ -83,14 +86,14 @@ export const shops = [
       { type: "Barista", amount: 0 },
       { type: "Master Barista", amount: 0 },
     ],
-    maxCoffeeCapacity: 6 * 1 - 6,
+    maxCoffeeCapacity: 12 * 1 - 12,
   },
   {
     name: "Barista Shop",
     amount: 0,
-    sellingPriceValue: 4500,
-    price: 4800,
-    rent: 650 * 1 - 650,
+    sellingPriceValue: 2000,
+    price: 2200,
+    rent: 350 * 1 - 350,
     hired: 0,
     maxToHire: 4 * 1 - 4,
     employeesType: [
@@ -98,14 +101,14 @@ export const shops = [
       { type: "Barista", amount: 0 },
       { type: "Master Barista", amount: 0 },
     ],
-    maxCoffeeCapacity: 8 * 1 - 8,
+    maxCoffeeCapacity: 24 * 1 - 24,
   },
   {
     name: "Luxury Shop",
     amount: 0,
-    sellingPriceValue: 12300,
-    price: 12500,
-    rent: 4550 * 1 - 4550,
+    sellingPriceValue: 5000,
+    price: 5500,
+    rent: 600 * 1 - 600,
     hired: 0,
     maxToHire: 6 * 1 - 6,
     employeesType: [
@@ -113,13 +116,13 @@ export const shops = [
       { type: "Barista", amount: 0 },
       { type: "Master Barista", amount: 0 },
     ],
-    maxCoffeeCapacity: 12 * 1 - 12,
+    maxCoffeeCapacity: 24 * 1 - 24,
   },
 ];
 
 //! EMPLOYEES COSTS
 export const employeesSalariesInfos = [
-  { name: "intern", salary: 600 },
-  { name: "barista", salary: 2200 },
-  { name: "master", salary: 2800 },
+  { name: "intern", salary: 300 },
+  { name: "barista", salary: 1300 },
+  { name: "master", salary: 1800 },
 ];

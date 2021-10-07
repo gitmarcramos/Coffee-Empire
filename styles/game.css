@@ -119,6 +119,18 @@ section {
   background-color: white;
 }
 
+.disabled-btn::after {
+  content: "";
+  position: absolute;
+  border-radius: 200px;
+  opacity: .7;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
 .my-company h2 {
   margin: 0;
 }

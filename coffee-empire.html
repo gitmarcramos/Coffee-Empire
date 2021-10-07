@@ -11,6 +11,7 @@
     <script type="module" src="/javascript/objects.js"></script>
     <script type="module" src="/javascript/display.js"></script>
     <script type="module" src="/javascript/htmlState.js"></script>
+    <script type="module" src="/javascript/features.js"></script>
 </head>
 
 <body>
@@ -80,7 +81,7 @@
 
                 <div class="card-info">
                     <div class="card-info-money">
-                        <h2 class="bodyText">Coffees capacity:</h2>
+                        <h2 class="bodyText">Coffees production:</h2>
                         <div class="money">
                             <h3 class="sub company_infos" id="company-coffees-hour"></h3>
                         </div>
@@ -215,12 +216,12 @@
 
             <div class="scroll-container">
 
-                <div id="card-price-regular" class="card scroll-card">
+                <div id="card-price-regular" class="card scroll-card coffee-card">
                     <div class="coffee-type">
                         <h2 class="sub">Regular coffee</h2>
                         <div class="price-element">
                             <span class="dollar">$</span>
-                            <span class="price title company_coffee_price" id="regular-coffee-price">1.00</span>
+                            <span class="price title company_coffee_price" id="regular-coffee-price"></span>
                         </div>
                     </div>
                     <div class="coffee-satisfaction">
@@ -234,7 +235,7 @@
                     </div>
                 </div>
 
-                <div class="card scroll-card">
+                <div class="card scroll-card coffee-card">
                     <div class="coffee-type">
                         <h2 class="sub">Organic coffee</h2>
                         <div class="price-element">
@@ -253,7 +254,7 @@
                     </div>
                 </div>
 
-                <div class="card scroll-card">
+                <div class="card scroll-card coffee-card">
                     <div class="coffee-type">
                         <h2 class="sub">Rare coffee</h2>
                         <div class="price-element">
@@ -294,7 +295,7 @@
 
                     <div class="stock-infos">
                         <div class="stock__infos stock__infos--buying-price">
-                            <span class="bodyText">Buying price <br> (for 100 coffes):</span>
+                            <span class="bodyText">Buying price <br> (for 1000 coffes):</span>
                             <div class="price-element">
                                 <span class="dollar">$</span>
                                 <span class="price bodyText bolder">3</span>
@@ -310,13 +311,13 @@
                         </div>
                         <div class="stock__infos stock__infos--coffees-left">
                             <span class="bodyText">Coffees left:</span>
-                            <span id="regular-coffees-left" class="title coffees_stocks-left">100</span>
+                            <span id="regular-coffees-left" class="title coffees_stocks-left">1000</span>
                         </div>
                     </div>
 
                     <div class="btn-container btn-container--horizontal">
-                        <div class="btn btn__raise coffees_stock_btn">Buy 100 Regular</div>
-                        <div class="btn coffees_stock_btn">Auto buy ($3.000)</div>
+                        <div class="btn btn__raise coffees_stock_btn">Buy 1000 Regular</div>
+                        <div class="btn coffees_stock_btn autobuy">Auto buy ($3.000)</div>
                     </div>
                 </div>
 
@@ -330,7 +331,7 @@
 
                     <div class="stock-infos">
                         <div class="stock__infos stock__infos--buying-price">
-                            <span class="bodyText">Buying price <br> (for 100 coffees):</span>
+                            <span class="bodyText">Buying price <br> (for 1000 coffees):</span>
                             <div class="price-element">
                                 <span class="dollar">$</span>
                                 <span class="price bodyText bolder">5</span>
@@ -351,8 +352,8 @@
                     </div>
 
                     <div class="btn-container btn-container--horizontal">
-                        <div class="btn btn__raise coffees_stock_btn">Buy 100 Organic</div>
-                        <div class="btn coffees_stock_btn">Auto buy ($9.000)</div>
+                        <div class="btn btn__raise coffees_stock_btn">Buy 1000 Organic</div>
+                        <div class="btn coffees_stock_btn autobuy">Auto buy ($9.000)</div>
                     </div>
                 </div>
 
@@ -366,7 +367,7 @@
 
                     <div class="stock-infos">
                         <div class="stock__infos stock__infos--buying-price">
-                            <span class="bodyText">Buying price <br> (for 25 coffees):</span>
+                            <span class="bodyText">Buying price <br> (for 250 coffees):</span>
                             <div class="price-element">
                                 <span class="dollar">$</span>
                                 <span class="price bodyText bolder">4</span>
@@ -387,8 +388,8 @@
                     </div>
 
                     <div class="btn-container btn-container--horizontal">
-                        <div class="btn btn__raise coffees_stock_btn">Buy 25 Organic</div>
-                        <div class="btn coffees_stock_btn">Auto buy ($12.000)</div>
+                        <div class="btn btn__raise coffees_stock_btn">Buy 250 Rare</div>
+                        <div class="btn coffees_stock_btn autobuy">Auto buy ($12.000)</div>
                     </div>
                 </div>
             </div>
@@ -418,7 +419,7 @@
                     <div class="shop-infos">
                         <div class="shop-infos--item">
                             <span class="bodyText">Shop price:</span>
-                            <span class="bolder bodyText">$ <span class="shop_price">3.200</span></span>
+                            <span class="bolder bodyText">$ <span class="shop_price"></span></span>
                         </div>
                         <div class="shop-infos--item">
                             <span class="bodyText">Rent per month:</span>
@@ -870,7 +871,7 @@
 
         <script src="/javascript/cookies-modal.js"></script>
         <script src="/javascript/app.js"></script>
-        <script src="/javascript/features.js"></script>
+
 
 
     </div>

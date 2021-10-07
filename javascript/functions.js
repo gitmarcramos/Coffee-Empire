@@ -6,33 +6,55 @@ import { employeesSalariesInfos } from "./objects.js";
 //! SET COFFEES PRICE
 export function raiseCoffeePrice(index) {
   if (index === 1) {
-    coffees[0].price += 0.01;
+    coffees[0].price += 0.1;
   } else if (index === 3) {
-    coffees[1].price += 0.01;
+    coffees[1].price += 0.1;
   } else if (index === 5) {
-    coffees[2].price += 0.01;
+    coffees[2].price += 0.1;
   }
 }
 
 export function lowerCoffeePrice(index) {
   if (index === 0) {
-    coffees[0].price -= 0.01;
+    coffees[0].price -= 0.1;
   } else if (index === 2) {
-    coffees[1].price -= 0.01;
+    coffees[1].price -= 0.1;
   } else if (index === 4) {
-    coffees[2].price -= 0.01;
+    coffees[2].price -= 0.1;
   }
 }
 
 //! BUY COFFEE STOCKS
 export function addStock(index) {
   if (index === 0) {
-    stocks[0].quantity += 100;
+    stocks[0].quantity += 1000;
   } else if (index === 2) {
-    stocks[1].quantity += 100;
+    stocks[1].quantity += 1000;
   } else if (index === 4) {
-    stocks[2].quantity += 25;
+    stocks[2].quantity += 250;
   }
+}
+
+//! AUTO BUY
+export function autoBuyBtn(index) {
+  const stockBtns = document.querySelectorAll(".coffees_stock_btn");
+  const coffeeProduction = document.querySelector('#company-coffees-hour');
+
+  if (index === 1 && Number(coffeeProduction.innerText) > 0) {
+    stockBtns[0].classList.add("disabled-btn");
+    generalFunds.funds -= 3000;
+    stocks[0].isAutoBuy = true;
+  }
+  else if (index === 3) {
+    stockBtns[1].classList.add("disabled-btn");
+    generalFunds.funds -= 9000;
+    stocks[1].isAutoBuy = true;
+  }
+  else if (index === 5) {
+    stockBtns[2].classList.add("disabled-btn");
+    generalFunds.funds -= 12000;
+    stocks[2].isAutoBuy = true;
+  } 
 }
 
 //! compute the cost per coffee
@@ -40,31 +62,27 @@ export const pricePerCoffee = function (object) {
   return object.buyingPrice / object.stockPerBag;
 };
 
-//! compute the benefits per coffee, according the coffee price set by user
-const benefitsPerCoffee = function (object) {};
-
 //! BUY SHOP
 export function buyShop(index) {
   if (index === 1 && generalFunds.funds > shops[0].price) {
     shops[0].amount += 1;
     shops[0].maxToHire += 2;
     shops[0].rent += 250;
-    shops[0].maxCoffeeCapacity += 6;
+    shops[0].maxCoffeeCapacity += 12;
     generalFunds.funds -= shops[0].price;
   }
   if (index === 3 && generalFunds.funds > shops[1].price) {
     shops[1].amount += 1;
     shops[1].maxToHire += 4;
     shops[1].rent += 650;
-    shops[1].maxCoffeeCapacity += 8;
+    shops[1].maxCoffeeCapacity += 18;
     generalFunds.funds -= shops[1].price;
   } else if (index === 5 && generalFunds.funds > shops[2].price) {
     shops[2].amount += 1;
     shops[2].maxToHire += 6;
     shops[2].rent += 4550;
-    shops[2].maxCoffeeCapacity += 12;
+    shops[2].maxCoffeeCapacity += 24;
     generalFunds.funds -= shops[2].price;
-    shopsCards[2].classList.remove("disabled-card");
   }
 }
 
@@ -74,19 +92,19 @@ export function sellShop(index) {
     shops[0].amount -= 1;
     shops[0].maxToHire -= 2;
     shops[0].rent -= 250;
-    shops[0].maxCoffeeCapacity -= 6;
+    shops[0].maxCoffeeCapacity -= 12;
     generalFunds.funds += shops[0].sellingPriceValue;
   } else if (index === 2 && shops[1].amount > 0) {
     shops[1].amount -= 1;
     shops[1].maxToHire -= 4;
     shops[1].rent -= 650;
-    shops[1].maxCoffeeCapacity -= 8;
+    shops[1].maxCoffeeCapacity -= 18;
     generalFunds.funds += shops[1].sellingPriceValue;
   } else if (index === 4 && shops[2].amount > 0) {
     shops[2].amount -= 1;
     shops[2].maxToHire -= 6;
     shops[2].rent -= 4550;
-    shops[2].maxCoffeeCapacity -= 12;
+    shops[2].maxCoffeeCapacity -= 24;
     generalFunds.funds += shops[2].sellingPriceValue;
   }
 }
@@ -232,5 +250,3 @@ export function computeSalaries(index) {
 export function removeCoffeeStock(totalCoffees, coffeesPerHour) {
   return (totalCoffees -= coffeesPerHour);
 }
-
-//! SUPER HUGE FUNCTION TO CALCULATE THE FUNDS!!!!
