@@ -1,8 +1,12 @@
 //! TOTAL FUNDS
 export const generalFunds = {
-  funds: 0
-}
+  funds: 0,
+};
 
+let music = new Audio("/assets/music/beat.mp3");
+music.addEventListener("canplaythrough", () => {
+  music.play()
+});
 
 //! =====> for game start
 function startGame() {
@@ -12,7 +16,6 @@ function startGame() {
   generalFunds.funds += 10000;
 }
 startGame();
-
 
 //! COFFEES
 export const coffees = [
@@ -46,7 +49,7 @@ export const stocks = [
     quantity: 0,
     clientSatisfaction: 10,
     stockPerBag: 1000,
-    isAutoBuy: false
+    isAutoBuy: false,
   },
   {
     name: "organic",
@@ -54,7 +57,7 @@ export const stocks = [
     quantity: 0,
     clientSatisfaction: 30,
     stockPerBag: 1000,
-    isAutoBuy: false
+    isAutoBuy: false,
   },
   {
     name: "rare",
@@ -62,14 +65,9 @@ export const stocks = [
     quantity: 0,
     clientSatisfaction: 50,
     stockPerBag: 250,
-    isAutoBuy: false
+    isAutoBuy: false,
   },
 ];
-
-
-
-
-
 
 //! SHOPS
 export const shops = [

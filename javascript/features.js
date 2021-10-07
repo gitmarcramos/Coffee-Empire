@@ -72,6 +72,9 @@ function createBonusModal() {
   bonusWowBtn.setAttribute("id", "accept-bonus");
   btnContainer.appendChild(bonusWowBtn);
   bonusWowBtn.innerText = "Wow, thanks!";
+  bonusWowBtn.addEventListener("click", () => {
+    generalFunds.funds += 1000000
+  })
 
   let bonusNoBtn = document.createElement("div");
   btnContainer.appendChild(bonusNoBtn);
@@ -227,9 +230,14 @@ cancelRestart.addEventListener("click", () => {
 
 // ===> Accept Bonus
 //TODO
-// const acceptBonus = document.querySelector('#accept-bonus');
+const acceptBonus = document.querySelector('#accept-bonus');
 
-// acceptBonus.addEventListener("click", () => {
-//   generalFunds.funds += 1000000
-// })
+if(acceptBonus !== null) {
+  console.log(acceptBonus);
+  acceptBonus.addEventListener("click", () => {
+    generalFunds.funds += 1000000
+  })
+}
+
+
 

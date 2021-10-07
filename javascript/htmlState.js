@@ -255,7 +255,6 @@ function refresh(object) {
         generalFunds.funds = 0;
     }
 
-    console.log(generalFunds.funds);
 
   // =============> COMPUTE PROFITS <================
   let allInternsHired = document.querySelectorAll(
@@ -292,12 +291,12 @@ function refresh(object) {
     regularCoffeesBenefitsAfterSale +
     premiumCoffeesBenefitsAfterSale +
     rareCoffeesBenefitsAfterSale -
-    totalEmployeesCost -
+    (totalEmployeesCost -
     shops[0].rent -
     shops[1].rent -
-    shops[2].rent;
+    shops[2].rent)/30;
 
-    console.log(averageRevenuePerHour)
+    console.log(regularCoffeesBenefitsAfterSale)
 
     document.querySelector("#company-average_revenue_hour").innerText = Number(averageRevenuePerHour.toFixed(2))
 
