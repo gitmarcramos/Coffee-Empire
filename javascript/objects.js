@@ -78,7 +78,7 @@ export const shops = [
     amount: 0,
     sellingPriceValue: 1000,
     price: 1200,
-    rent: 100 * 1 - 100,
+    rent: 50 * 1 - 50,
     hired: 0,
     maxToHire: 2 * 1 - 2,
     employeesType: [
@@ -93,7 +93,7 @@ export const shops = [
     amount: 0,
     sellingPriceValue: 2000,
     price: 2200,
-    rent: 350 * 1 - 350,
+    rent: 100 * 1 - 100,
     hired: 0,
     maxToHire: 4 * 1 - 4,
     employeesType: [
@@ -108,7 +108,7 @@ export const shops = [
     amount: 0,
     sellingPriceValue: 5000,
     price: 5500,
-    rent: 600 * 1 - 600,
+    rent: 150 * 1 - 150,
     hired: 0,
     maxToHire: 6 * 1 - 6,
     employeesType: [
@@ -122,7 +122,7 @@ export const shops = [
 
 //! EMPLOYEES COSTS
 export const employeesSalariesInfos = [
-  { name: "intern", salary: 300 },
-  { name: "barista", salary: 1300 },
-  { name: "master", salary: 1800 },
+  { name: "intern", salary: 100 },
+  { name: "barista", salary: 300 },
+  { name: "master", salary: 400 },
 ];

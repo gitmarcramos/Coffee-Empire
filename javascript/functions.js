@@ -67,20 +67,20 @@ export function buyShop(index) {
   if (index === 1 && generalFunds.funds > shops[0].price) {
     shops[0].amount += 1;
     shops[0].maxToHire += 2;
-    shops[0].rent += 250;
+    shops[0].rent += 50;
     shops[0].maxCoffeeCapacity += 12;
     generalFunds.funds -= shops[0].price;
   }
   if (index === 3 && generalFunds.funds > shops[1].price) {
     shops[1].amount += 1;
     shops[1].maxToHire += 4;
-    shops[1].rent += 650;
+    shops[1].rent += 100;
     shops[1].maxCoffeeCapacity += 18;
     generalFunds.funds -= shops[1].price;
   } else if (index === 5 && generalFunds.funds > shops[2].price) {
     shops[2].amount += 1;
     shops[2].maxToHire += 6;
-    shops[2].rent += 4550;
+    shops[2].rent += 150;
     shops[2].maxCoffeeCapacity += 24;
     generalFunds.funds -= shops[2].price;
   }
@@ -91,19 +91,19 @@ export function sellShop(index) {
   if (index === 0 && shops[0].amount > 0) {
     shops[0].amount -= 1;
     shops[0].maxToHire -= 2;
-    shops[0].rent -= 250;
+    shops[0].rent -= 50;
     shops[0].maxCoffeeCapacity -= 12;
     generalFunds.funds += shops[0].sellingPriceValue;
   } else if (index === 2 && shops[1].amount > 0) {
     shops[1].amount -= 1;
     shops[1].maxToHire -= 4;
-    shops[1].rent -= 650;
+    shops[1].rent -= 100;
     shops[1].maxCoffeeCapacity -= 18;
     generalFunds.funds += shops[1].sellingPriceValue;
   } else if (index === 4 && shops[2].amount > 0) {
     shops[2].amount -= 1;
     shops[2].maxToHire -= 6;
-    shops[2].rent -= 4550;
+    shops[2].rent -= 150;
     shops[2].maxCoffeeCapacity -= 24;
     generalFunds.funds += shops[2].sellingPriceValue;
   }

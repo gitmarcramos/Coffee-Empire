@@ -237,17 +237,25 @@ function refresh(object) {
   }
 
   //=====> now we calculate the benefits
-  let regularCoffeesBenefitsAfterSale = regCoffeesProducted * regCoffeeBenefits;
+  let regularCoffeesBenefitsAfterSale = regCoffeesProducted * regCoffeeBenefits * 1;
 
   let premiumCoffeesBenefitsAfterSale =
-    premiumCoffeesProducted * premCoffeeBenefits;
+    premiumCoffeesProducted * premCoffeeBenefits * 1;
 
-  let rareCoffeesBenefitsAfterSale = rareCoffeesProducted * rareCoffeeBenefits;
+  let rareCoffeesBenefitsAfterSale = rareCoffeesProducted * rareCoffeeBenefits * 1;
 
   generalFunds.funds +=
     regularCoffeesBenefitsAfterSale +
     premiumCoffeesBenefitsAfterSale +
     rareCoffeesBenefitsAfterSale;
+
+
+
+    if (generalFunds.funds < 0){
+        generalFunds.funds = 0;
+    }
+
+    console.log(generalFunds.funds);
 
   // =============> COMPUTE PROFITS <================
   let allInternsHired = document.querySelectorAll(
@@ -289,7 +297,9 @@ function refresh(object) {
     shops[1].rent -
     shops[2].rent;
 
-    document.querySelector("#company-average_revenue_hour").innerText = averageRevenuePerHour
+    console.log(averageRevenuePerHour)
+
+    document.querySelector("#company-average_revenue_hour").innerText = Number(averageRevenuePerHour.toFixed(2))
 
   // ====> able or disable the shop cards if not enough money
   const shopsCards = document.querySelectorAll(".card.scroll-card.my-shops");
