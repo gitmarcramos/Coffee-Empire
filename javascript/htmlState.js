@@ -365,6 +365,9 @@ function refresh(object) {
   } else {
     autoBuy[2].classList.remove("disabled-btn");
   }
+
+
+  console.log(generalFunds.funds)
 }
 
 //! ============================ To Start the interval =========================== //

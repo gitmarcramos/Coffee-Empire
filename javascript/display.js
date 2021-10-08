@@ -393,6 +393,10 @@ setSalaries.forEach((salaryBtn, index) => {
 
 // //! MY COMPANY
 
+// total funds
+const companyFunds = document.querySelector('#company-funds_available');
+
+
 //arrows
 const allCompanyArrows = document.querySelectorAll(".company_infos_svg");
 allCompanyArrows.forEach((arrow, index) => {
