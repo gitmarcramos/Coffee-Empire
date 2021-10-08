@@ -8,9 +8,9 @@ import { calculateEmployeesCost, autoBuyBtn } from "./functions.js";
 const allCoffeesPrice = document.querySelectorAll(".company_coffee_price");
 
 //set coffees price from the objects.js
-allCoffeesPrice[0].innerText = coffees[0].price.toFixed(2)
-allCoffeesPrice[1].innerText = coffees[1].price.toFixed(2)
-allCoffeesPrice[2].innerText = coffees[2].price.toFixed(2)
+allCoffeesPrice[0].innerText = coffees[0].price.toFixed(2);
+allCoffeesPrice[1].innerText = coffees[1].price.toFixed(2);
+allCoffeesPrice[2].innerText = coffees[2].price.toFixed(2);
 
 function updatePrice() {
   allCoffeesPrice[0].innerText = coffees[0].price.toFixed(2);
@@ -45,6 +45,11 @@ allCoffeesBtn.forEach((btn, index) => {
 //coffees stock
 const coffeesLeft = document.querySelectorAll(".coffees_stocks-left");
 const myCompanyCoffeesStock = document.querySelector("#company-coffees-stock");
+const stocksCoffeesPrice = document.querySelectorAll(".price.bodyText.bolder");
+for (let i = 0; i < stocksCoffeesPrice.length; i++) {
+  stocksCoffeesPrice[i].innerText = stocks[i].buyingPrice;
+}
+
 myCompanyCoffeesStock.innerText = 0;
 
 coffeesLeft[0].innerText = stocks[0].quantity;
@@ -78,7 +83,7 @@ allCoffeesStockButtons.forEach((coffeeStockBtn, index) => {
       generalFunds.funds -= stocks[index].buyingPrice;
     } else {
       //! NEED TO CREATE AUTOBUY BUTTON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      autoBuyBtn(index)
+      autoBuyBtn(index);
       updateStocks();
     }
   });
@@ -216,10 +221,10 @@ const coffeesPerHour = document.querySelectorAll(".shop_coffees_hour");
 const companyAllCoffees = document.querySelector("#company-coffees-hour");
 
 for (let i = 0; i < coffeesPerHour.length; i++) {
-  if (i === 0) {
+  if (i === 0 || i === 1) {
     coffeesPerHour[i].innerText = shops[i].hired * 6;
-  } else if (i === 1 || i === 2) {
-    coffeesPerHour[i].innerText = shops[i].hired * 6;
+  } else if (i === 2) {
+    coffeesPerHour[i].innerText = shops[i].hired * 3;
   }
   companyAllCoffees.innerText = shops[i].hired;
 }
@@ -228,12 +233,12 @@ function updateCoffeesPerHour() {
   let totalCoffees = 0;
 
   for (let i = 0; i < coffeesPerHour.length; i++) {
-    if (i === 0) {
+    if (i === 0 || i === 1) {
       coffeesPerHour[i].innerText = shops[i].hired * 6;
       totalCoffees += shops[i].hired * 6;
-    } else if (i === 1 || i === 2) {
-      coffeesPerHour[i].innerText = shops[i].hired * 6;
-      totalCoffees += shops[i].hired * 6;
+    } else if (i === 2) {
+      coffeesPerHour[i].innerText = shops[i].hired * 3;
+      totalCoffees += shops[i].hired * 3;
     }
   }
   companyAllCoffees.innerText = totalCoffees;

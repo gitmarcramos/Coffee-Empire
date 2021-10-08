@@ -93,7 +93,7 @@ export const shops = [
     price: 2200,
     rent: 100 * 1 - 100,
     hired: 0,
-    maxToHire: 4 * 1 - 4,
+    maxToHire: 3 * 1 - 3,
     employeesType: [
       { type: "Intern", amount: 0 },
       { type: "Barista", amount: 0 },

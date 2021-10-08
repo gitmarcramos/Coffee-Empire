@@ -217,9 +217,7 @@ dangerBtn.addEventListener("click", () => {
 });
 
 confirmRestart.addEventListener("click", () => {
-  //needs to restart the game as well
-
-  console.log("restart");
+  location.reload();
   restartModal.classList.toggle("closed");
 });
 
@@ -240,4 +238,25 @@ if(acceptBonus !== null) {
 }
 
 
+// ===== > Feedback buttons
+const feedbackBtns1 = document.querySelectorAll('.btn');
+const feedbackBtns2 = document.querySelectorAll('.btn--secondary');
+
+feedbackBtns1.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.target.classList.add('btn-clicked');
+    setTimeout(() => {
+      e.target.classList.remove('btn-clicked');
+    }, 300)
+  })
+})
+
+feedbackBtns2.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.target.classList.add('btn-clicked');
+    setTimeout(() => {
+      e.target.classList.remove('btn-clicked');
+    }, 300)
+  })
+})
 

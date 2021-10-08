@@ -19,11 +19,21 @@ function refresh(object) {
   actualState.stateAverageRevenuHour = Number(
     document.querySelector("#company-average_revenue_hour").innerText
   );
+  if(actualState.stateAverageRevenuHour <= 0){
+    document.querySelector("#company-average_revenue_hour").classList.add('danger')
+  } else {
+    document.querySelector("#company-average_revenue_hour").classList.remove('danger')
+  }
 
   // coffees per hour / production capacity
   actualState.stateCoffeesPerHour = Number(
     document.querySelector("#company-coffees-hour").innerText
   );
+  if(actualState.stateCoffeesPerHour <= 0){
+    document.querySelector("#company-coffees-hour").classList.add('danger')
+  } else {
+    document.querySelector("#company-coffees-hour").classList.remove('danger')
+  }
 
   // rent per month
   actualState.stateRentPerMonth = Number(
