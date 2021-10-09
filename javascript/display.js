@@ -3,6 +3,20 @@ import { stocks } from "./objects.js";
 import { shops, generalFunds } from "./objects.js";
 import { calculateEmployeesCost, autoBuyBtn } from "./functions.js";
 
+
+// //! MY COMPANY
+// total funds
+const companyFunds = document.querySelector('#company-funds_available');
+
+
+
+//arrows
+const allCompanyArrows = document.querySelectorAll(".company_infos_svg");
+allCompanyArrows.forEach((arrow, index) => {
+  // arrow.style.display = 'none';
+});
+
+
 //! COFFEES
 //coffee price
 const allCoffeesPrice = document.querySelectorAll(".company_coffee_price");
@@ -269,6 +283,7 @@ sellBuyBtns.forEach((sellBuyBtn, index) => {
       updateRent();
       updateCoffeesPerHour();
       updateMaxCoffeeCapacity();
+      updateEmployeesHired()
     } else if (sellBuyBtn.classList.contains("buy__shop")) {
       buyShop(index);
       updateShopdisplay();
@@ -276,6 +291,7 @@ sellBuyBtns.forEach((sellBuyBtn, index) => {
       updateRent();
       updateCoffeesPerHour();
       updateMaxCoffeeCapacity();
+      updateEmployeesHired()
     }
   });
 });
@@ -391,14 +407,4 @@ setSalaries.forEach((salaryBtn, index) => {
   }
 });
 
-// //! MY COMPANY
 
-// total funds
-const companyFunds = document.querySelector('#company-funds_available');
-
-
-//arrows
-const allCompanyArrows = document.querySelectorAll(".company_infos_svg");
-allCompanyArrows.forEach((arrow, index) => {
-  // arrow.style.display = 'none';
-});

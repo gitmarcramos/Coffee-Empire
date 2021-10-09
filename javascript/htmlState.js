@@ -306,7 +306,7 @@ function refresh(object) {
     shops[1].rent -
     shops[2].rent)/30;
 
-    console.log(regularCoffeesBenefitsAfterSale)
+    // console.log(regularCoffeesBenefitsAfterSale)
 
     document.querySelector("#company-average_revenue_hour").innerText = Number(averageRevenuePerHour.toFixed(2))
 
@@ -367,7 +367,7 @@ function refresh(object) {
   }
 
 
-  console.log(generalFunds.funds)
+  // console.log(generalFunds.funds)
 }
 
 //! ============================ To Start the interval =========================== //

@@ -5,56 +5,42 @@ import { employeesSalariesInfos } from "./objects.js";
 
 //! SET COFFEES PRICE
 export function raiseCoffeePrice(index) {
-  if (index === 1) {
-    coffees[0].price += 0.1;
-  } else if (index === 3) {
-    coffees[1].price += 0.1;
-  } else if (index === 5) {
-    coffees[2].price += 0.1;
-  }
+  if (index === 1) return (coffees[0].price += 0.1);
+  if (index === 3) return (coffees[1].price += 0.1);
+  if (index === 5) return (coffees[1].price += 0.1);
 }
 
 export function lowerCoffeePrice(index) {
-  if (index === 0) {
-    coffees[0].price -= 0.1;
-  } else if (index === 2) {
-    coffees[1].price -= 0.1;
-  } else if (index === 4) {
-    coffees[2].price -= 0.1;
-  }
+  if (index === 0) return (coffees[0].price -= 0.1);
+  if (index === 2) return (coffees[1].price -= 0.1);
+  if (index === 4) return (coffees[2].price -= 0.1);
 }
 
 //! BUY COFFEE STOCKS
 export function addStock(index) {
-  if (index === 0) {
-    stocks[0].quantity += 1000;
-  } else if (index === 2) {
-    stocks[1].quantity += 1000;
-  } else if (index === 4) {
-    stocks[2].quantity += 250;
-  }
+  if (index === 0) return (stocks[0].quantity += 1000);
+  if (index === 2) return (stocks[1].quantity += 1000);
+  if (index === 4) return (stocks[2].quantity += 1000);
 }
 
 //! AUTO BUY
 export function autoBuyBtn(index) {
   const stockBtns = document.querySelectorAll(".coffees_stock_btn");
-  const coffeeProduction = document.querySelector('#company-coffees-hour');
+  const coffeeProduction = document.querySelector("#company-coffees-hour");
 
   if (index === 1 && Number(coffeeProduction.innerText) > 0) {
     stockBtns[0].classList.add("disabled-btn");
     generalFunds.funds -= 3000;
     stocks[0].isAutoBuy = true;
-  }
-  else if (index === 3) {
+  } else if (index === 3) {
     stockBtns[1].classList.add("disabled-btn");
     generalFunds.funds -= 9000;
     stocks[1].isAutoBuy = true;
-  }
-  else if (index === 5) {
+  } else if (index === 5) {
     stockBtns[2].classList.add("disabled-btn");
     generalFunds.funds -= 12000;
     stocks[2].isAutoBuy = true;
-  } 
+  }
 }
 
 //! compute the cost per coffee
@@ -77,7 +63,8 @@ export function buyShop(index) {
     shops[1].rent += 100;
     shops[1].maxCoffeeCapacity += 18;
     generalFunds.funds -= shops[1].price;
-  } else if (index === 5 && generalFunds.funds > shops[2].price) {
+  } 
+  if (index === 5 && generalFunds.funds > shops[2].price) {
     shops[2].amount += 1;
     shops[2].maxToHire += 6;
     shops[2].rent += 150;
@@ -93,30 +80,37 @@ export function sellShop(index) {
     shops[0].maxToHire -= 2;
     shops[0].rent -= 50;
     shops[0].maxCoffeeCapacity -= 12;
+    fireEveryone();
     generalFunds.funds += shops[0].sellingPriceValue;
+    document.querySelector("#company-funds_available").innerText =
+      generalFunds.funds;
   } else if (index === 2 && shops[1].amount > 0) {
     shops[1].amount -= 1;
     shops[1].maxToHire -= 3;
     shops[1].rent -= 100;
     shops[1].maxCoffeeCapacity -= 18;
+    fireEveryone();
     generalFunds.funds += shops[1].sellingPriceValue;
+    document.querySelector("#company-funds_available").innerText =
+      generalFunds.funds;
   } else if (index === 4 && shops[2].amount > 0) {
     shops[2].amount -= 1;
     shops[2].maxToHire -= 6;
     shops[2].rent -= 150;
     shops[2].maxCoffeeCapacity -= 18;
+    fireEveryone();
     generalFunds.funds += shops[2].sellingPriceValue;
+    document.querySelector("#company-funds_available").innerText =
+      generalFunds.funds;
   }
 }
 
 //! CALCULATE EMPLOYEES HIRED
 export function calculateEmployeesHired(index) {
   let employeesHired = 0;
-
   shops[index].employeesType.forEach((employee) => {
     employeesHired += employee.amount;
   });
-
   return employeesHired;
 }
 
@@ -229,22 +223,17 @@ export function calculateEmployeesCost(index) {
 //! UPDATE SALARIES
 export function computeSalaries(index) {
   // RAISE SALARIES
-  if (index === 1) {
-    employeesSalariesInfos[0].salary += 10;
-  } else if (index === 3) {
-    employeesSalariesInfos[1].salary += 10;
-  } else if (index === 5) {
-    employeesSalariesInfos[2].salary += 10;
-  }
+  if (index === 1) return (employeesSalariesInfos[0].salary += 10);
+  if (index === 3) return (employeesSalariesInfos[1].salary += 10);
+  if (index === 5) return (employeesSalariesInfos[2].salary += 10);
 
   //LOWER SALARIES
-  if (index === 0 && employeesSalariesInfos[0].salary > 0) {
-    employeesSalariesInfos[0].salary -= 10;
-  } else if (index === 2 && employeesSalariesInfos[1].salary > 0) {
-    employeesSalariesInfos[1].salary -= 10;
-  } else if (index === 4 && employeesSalariesInfos[2].salary > 0) {
-    employeesSalariesInfos[2].salary -= 10;
-  }
+  if (index === 0 && employeesSalariesInfos[0].salary > 0)
+    return (employeesSalariesInfos[0].salary -= 10);
+  if (index === 2 && employeesSalariesInfos[1].salary > 0)
+    return (employeesSalariesInfos[1].salary -= 10);
+  if (index === 4 && employeesSalariesInfos[2].salary > 0)
+    return (employeesSalariesInfos[2].salary -= 10);
 }
 
 export function removeCoffeeStock(totalCoffees, coffeesPerHour) {
